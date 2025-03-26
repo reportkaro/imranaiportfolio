@@ -43,7 +43,7 @@ const Hero = () => {
             </span>
             
             {/* Animation container with fixed height to prevent layout shifts */}
-            <div className="relative h-[320px] w-full overflow-hidden">
+            <div className="relative h-[240px] md:h-[200px] w-full overflow-hidden">
               <AnimatePresence mode="wait">
                 {!isChatOpen ? (
                   <HeroHeading isVisible={isVisible} aiTextOptions={aiTextOptions} />

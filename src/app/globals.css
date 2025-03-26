@@ -176,23 +176,12 @@ p {
   box-shadow: 0 10px 25px var(--card-shadow);
 }
 
-/* Updated Gradient text styles for better text flow */
+/* Gradient text */
 .gradient-text {
-  background-image: linear-gradient(135deg, var(--accent), var(--tertiary));
-  background-size: 300% 300%;
+  background: linear-gradient(135deg, var(--accent), var(--tertiary));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  display: inline-block;
-  line-height: 1.2;
-  padding: 0;
-  margin: 0;
-  width: fit-content;
-  transition: background-position 0.6s ease;
-}
-
-.gradient-text:hover {
-  background-position: 100% 50%;
 }
 
 /* Section title underline */
@@ -459,65 +448,4 @@ p {
 
 .animate-fade-in-out-delay {
   animation: fade-in-out 3s ease-in-out 1.5s infinite;
-}
-
-/* Updated hero heading styles for better text alignment and readability */
-.hero-heading {
-  line-height: 1.2;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  letter-spacing: -0.025em;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.hero-heading .gradient-text,
-.hero-heading .colored-text {
-  display: inline-block;
-  line-height: inherit;
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
-
-/* Improve heading flow at different screen sizes */
-@media (min-width: 768px) {
-  h1 .flex-col {
-    max-width: 90%;
-    gap: 1rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  h1 .flex-col {
-    max-width: 80%;
-    gap: 1.25rem;
-  }
-}
-
-/* Improved mobile styles */
-@media (max-width: 640px) {
-  h1 {
-    font-size: 2.25rem !important;
-    line-height: 1.2 !important;
-  }
-  
-  h1 .flex-col {
-    gap: 0.5rem !important;
-  }
-  
-  .hero-heading {
-    gap: 0.5rem;
-  }
-  
-  .hero-heading > span {
-    display: inline-block;
-    margin-bottom: 0.1em;
-  }
-  
-  /* Add extra bottom margin to last div in heading for mobile */
-  h1 .flex-col > div:last-child {
-    margin-bottom: 0.5rem;
-  }
 }
