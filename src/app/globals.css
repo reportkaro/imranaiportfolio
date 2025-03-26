@@ -176,18 +176,18 @@ p {
   box-shadow: 0 10px 25px var(--card-shadow);
 }
 
-/* Gradient text */
+/* Updated Gradient text styles for better text flow */
 .gradient-text {
+  background-image: linear-gradient(135deg, var(--accent), var(--tertiary));
   background-size: 300% 300%;
-  transition: all 0.3s ease-out;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   display: inline-block;
   line-height: 1.1;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(135deg, var(--accent), var(--tertiary));
   padding: 0;
   margin: 0;
+  width: fit-content;
 }
 
 /* Section title underline */
@@ -474,24 +474,28 @@ p {
   position: relative;
 }
 
-/* Gradient text improvements */
-.gradient-text {
-  background-size: 300% 300%;
-  transition: all 0.3s ease-out;
-  display: inline-block;
-  line-height: 1.1;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(135deg, var(--accent), var(--tertiary));
-  padding: 0;
-  margin: 0;
+/* Improve heading flow at different screen sizes */
+@media (min-width: 768px) {
+  h1 .flex-col {
+    max-width: 90%;
+  }
 }
 
-/* Improve responsive behavior for hero headings */
+@media (min-width: 1024px) {
+  h1 .flex-col {
+    max-width: 80%;
+  }
+}
+
+/* Improved mobile styles */
 @media (max-width: 640px) {
   h1 {
     font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  h1 .flex-col {
+    gap: 0.5rem !important;
   }
   
   h1 br {
@@ -507,5 +511,10 @@ p {
   .hero-heading > span {
     display: inline-block;
     margin-bottom: 0.1em;
+  }
+  
+  /* Add extra bottom margin to last div in heading for mobile */
+  h1 .flex-col > div:last-child {
+    margin-bottom: 0.5rem;
   }
 }
