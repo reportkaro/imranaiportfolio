@@ -254,12 +254,12 @@ p {
 /* Floating animation for AI elements */
 @keyframes float {
   0% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
+  50% { transform: translateY(-8px); }
   100% { transform: translateY(0px); }
 }
 
 .animate-float {
-  animation: float 5s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
 }
 
 /* Gradient animation for neural effect */
@@ -347,4 +347,101 @@ p {
 .ai-border:hover::before {
   background-size: 150% 150%;
   animation-duration: 2s;
+}
+
+/* Add this at the end of the file */
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 6s ease infinite;
+}
+
+/* Add animations for the LessonLoom project image */
+
+/* Animation for floating elements */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Animation for slower pulse */
+@keyframes pulse-slower {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% { 
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+.animate-pulse-slower {
+  animation: pulse-slower 7s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Animation for subtle pulse */
+@keyframes pulse-subtle {
+  0%, 100% { 
+    box-shadow: 0 0 8px rgba(79, 70, 229, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 15px rgba(79, 70, 229, 0.6);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* Animation for growing lines (typing effect) */
+@keyframes line-grow {
+  0% { width: 0%; }
+  100% { width: 90%; }
+}
+
+.animate-line-grow {
+  animation: line-grow 1.5s ease-in-out forwards;
+}
+
+.animate-line-grow-delay-1 {
+  animation: line-grow 1.5s ease-in-out 0.5s forwards;
+}
+
+.animate-line-grow-delay-2 {
+  animation: line-grow 1.5s ease-in-out 1s forwards;
+}
+
+.animate-line-grow-delay-3 {
+  animation: line-grow 1.5s ease-in-out 1.5s forwards;
+}
+
+/* Animation for fading in and out elements */
+@keyframes fade-in-out {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.3; }
+}
+
+.animate-fade-in-out {
+  animation: fade-in-out 3s ease-in-out infinite;
+}
+
+.animate-fade-in-out-delay {
+  animation: fade-in-out 3s ease-in-out 1.5s infinite;
 }

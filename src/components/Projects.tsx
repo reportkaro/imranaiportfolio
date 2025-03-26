@@ -81,7 +81,7 @@ const FeaturedWork = () => {
                   <p className="text-muted mb-8 leading-relaxed">{project.description}</p>
                   
                   <Link 
-                    href={`/projects/${project.slug}`} 
+                    href={index === 0 ? `/casestudy` : `/projects/${project.slug}`} 
                     className="inline-flex items-center font-medium text-accent hover:text-accent/80 transition-colors"
                   >
                     View case study
