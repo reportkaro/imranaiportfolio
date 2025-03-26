@@ -17,7 +17,7 @@ export default function ProjectClientPage() {
     return (
       <div className="container mx-auto px-4 py-24">
         <h1 className="text-3xl font-bold mb-4">Project Not Found</h1>
-        <p>Sorry, we couldn't find the project you're looking for.</p>
+        <p>Sorry, we couldn&apos;t find the project you&apos;re looking for.</p>
       </div>
     );
   }

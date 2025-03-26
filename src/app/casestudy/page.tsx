@@ -247,35 +247,35 @@ export default function CaseStudy() {
                       <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-purple-100 text-purple-700 text-lg font-bold shrink-0">1</span>
                       <div>
                         <strong className="text-purple-700">Creators valued pedagogical decisions, not formatting:</strong>
-                        <p className="mt-1 text-gray-700 italic">"I spend 70% of my time making things look right rather than thinking about how students will learn."</p>
+                        <p className="mt-1 text-gray-700 italic">&quot;I spend 70% of my time making things look right rather than thinking about how students will learn.&quot;</p>
                       </div>
                     </li>
                     <li className="flex items-start p-4 bg-white rounded-lg shadow-sm">
                       <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-indigo-100 text-indigo-700 text-lg font-bold shrink-0">2</span>
                       <div>
                         <strong className="text-indigo-700">Templates were mental models, not just documents:</strong>
-                        <p className="mt-1 text-gray-700 italic">"We already have mental templates we follow, but they're not captured anywhere."</p>
+                        <p className="mt-1 text-gray-700 italic">&quot;We already have mental templates we follow, but they&apos;re not captured anywhere.&quot;</p>
                       </div>
                     </li>
                     <li className="flex items-start p-4 bg-white rounded-lg shadow-sm">
                       <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-pink-100 text-pink-700 text-lg font-bold shrink-0">3</span>
                       <div>
                         <strong className="text-pink-700">Content needs varied by subject:</strong>
-                        <p className="mt-1 text-gray-700 italic">"Math lessons follow very predictable patterns, while reading comprehension needs more flexibility."</p>
+                        <p className="mt-1 text-gray-700 italic">&quot;Math lessons follow very predictable patterns, while reading comprehension needs more flexibility.&quot;</p>
                       </div>
                     </li>
                     <li className="flex items-start p-4 bg-white rounded-lg shadow-sm">
                       <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-purple-100 text-purple-700 text-lg font-bold shrink-0">4</span>
                       <div>
                         <strong className="text-purple-700">Visual clarity was essential:</strong>
-                        <p className="mt-1 text-gray-700 italic">"I need to see exactly how the final lesson will appear to teachers."</p>
+                        <p className="mt-1 text-gray-700 italic">&quot;I need to see exactly how the final lesson will appear to teachers.&quot;</p>
                       </div>
                     </li>
                     <li className="flex items-start p-4 bg-white rounded-lg shadow-sm">
                       <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-indigo-100 text-indigo-700 text-lg font-bold shrink-0">5</span>
                       <div>
                         <strong className="text-indigo-700">Trust in automation was fragile:</strong>
-                        <p className="mt-1 text-gray-700 italic">"I'd use automation if I could verify and adjust the output easily."</p>
+                        <p className="mt-1 text-gray-700 italic">&quot;I&apos;d use automation if I could verify and adjust the output easily.&quot;</p>
                       </div>
                     </li>
                   </ol>
