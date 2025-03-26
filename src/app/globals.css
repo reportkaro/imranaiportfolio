@@ -184,10 +184,15 @@ p {
   background-clip: text;
   color: transparent;
   display: inline-block;
-  line-height: 1.1;
+  line-height: 1.2;
   padding: 0;
   margin: 0;
   width: fit-content;
+  transition: background-position 0.6s ease;
+}
+
+.gradient-text:hover {
+  background-position: 100% 50%;
 }
 
 /* Section title underline */
@@ -456,18 +461,20 @@ p {
   animation: fade-in-out 3s ease-in-out 1.5s infinite;
 }
 
-/* Updated hero heading styles for better text alignment */
+/* Updated hero heading styles for better text alignment and readability */
 .hero-heading {
-  line-height: 1.1;
+  line-height: 1.2;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.1em;
-  letter-spacing: -0.03em;
+  flex-direction: column;
+  gap: 0.75rem;
+  letter-spacing: -0.025em;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .hero-heading .gradient-text,
 .hero-heading .colored-text {
-  display: inline;
+  display: inline-block;
   line-height: inherit;
   margin: 0;
   padding: 0;
@@ -478,19 +485,21 @@ p {
 @media (min-width: 768px) {
   h1 .flex-col {
     max-width: 90%;
+    gap: 1rem;
   }
 }
 
 @media (min-width: 1024px) {
   h1 .flex-col {
     max-width: 80%;
+    gap: 1.25rem;
   }
 }
 
 /* Improved mobile styles */
 @media (max-width: 640px) {
   h1 {
-    font-size: 2.5rem !important;
+    font-size: 2.25rem !important;
     line-height: 1.2 !important;
   }
   
@@ -498,14 +507,8 @@ p {
     gap: 0.5rem !important;
   }
   
-  h1 br {
-    display: none;
-  }
-  
   .hero-heading {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
+    gap: 0.5rem;
   }
   
   .hero-heading > span {
