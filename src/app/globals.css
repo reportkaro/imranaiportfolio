@@ -178,10 +178,16 @@ p {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, var(--accent), var(--tertiary));
-  -webkit-background-clip: text;
+  background-size: 300% 300%;
+  transition: all 0.3s ease-out;
+  display: inline-block;
+  line-height: 1.1;
   background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
+  background-image: linear-gradient(135deg, var(--accent), var(--tertiary));
+  padding: 0;
+  margin: 0;
 }
 
 /* Section title underline */
@@ -450,7 +456,7 @@ p {
   animation: fade-in-out 3s ease-in-out 1.5s infinite;
 }
 
-/* Hero heading styles for better text alignment */
+/* Updated hero heading styles for better text alignment */
 .hero-heading {
   line-height: 1.1;
   display: flex;
@@ -468,8 +474,30 @@ p {
   position: relative;
 }
 
+/* Gradient text improvements */
+.gradient-text {
+  background-size: 300% 300%;
+  transition: all 0.3s ease-out;
+  display: inline-block;
+  line-height: 1.1;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(135deg, var(--accent), var(--tertiary));
+  padding: 0;
+  margin: 0;
+}
+
 /* Improve responsive behavior for hero headings */
 @media (max-width: 640px) {
+  h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  h1 br {
+    display: none;
+  }
+  
   .hero-heading {
     flex-direction: column;
     align-items: flex-start;

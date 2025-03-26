@@ -38,32 +38,42 @@ const HeroHeading = ({ isVisible, aiTextOptions }: HeroHeadingProps) => {
       style={{ willChange: "opacity" }}
       ref={elementRef}
     >
-      <h1 
-        className={`hero-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-8 ${
+      {/* Reduced font sizes and simplified structure */}
+      <div 
+        className={`mb-6 md:mb-8 transition-all duration-300 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
         }`}
       >
-        <span>Creating</span>{" "}
-        <span 
-          ref={gradientTextRef}
-          className="gradient-text animate-gradient"
-          style={{ 
-            backgroundSize: '300% 300%',
-            transition: 'all 1.5s cubic-bezier(0.22, 1, 0.36, 1)',
-            opacity: textOpacity
-          }}
-        >
-          {currentText}
-          {typing && (
-            <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 h-[60%] w-[2px] bg-accent animate-blink inline-block opacity-60"></span>
-          )}
-        </span>{" "}
-        <span>experiences with purpose</span>{" "}
-        <span>and precision.</span>
-      </h1>
+        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-tight">
+          Creating
+        </h1>
+        
+        <div className="my-1">
+          <span 
+            ref={gradientTextRef}
+            className="gradient-text animate-gradient text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight"
+            style={{ 
+              backgroundSize: '300% 300%',
+              transition: 'all 1.5s cubic-bezier(0.22, 1, 0.36, 1)',
+              opacity: textOpacity,
+              display: 'inline-block',
+              position: 'relative'
+            }}
+          >
+            {currentText}
+            {typing && (
+              <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 h-[60%] w-[2px] bg-accent animate-blink inline-block opacity-60"></span>
+            )}
+          </span>
+        </div>
+        
+        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-tight">
+          experiences with purpose<br />and precision.
+        </h1>
+      </div>
       
       <p 
-        className={`text-lg md:text-xl text-muted mb-0 max-w-2xl leading-relaxed ${
+        className={`text-lg md:text-xl text-muted mb-0 max-w-2xl leading-relaxed transition-all duration-300 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
         }`}
       >
