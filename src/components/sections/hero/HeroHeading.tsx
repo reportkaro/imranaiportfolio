@@ -39,28 +39,27 @@ const HeroHeading = ({ isVisible, aiTextOptions }: HeroHeadingProps) => {
       ref={elementRef}
     >
       <h1 
-        className={`text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-8 leading-tight tracking-tight ${
+        className={`hero-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-8 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
         }`}
       >
-        <span className="block md:inline">Creating{" "}</span>
-        <span className="relative inline-block">
-          <span 
-            ref={gradientTextRef}
-            className="gradient-text animate-gradient"
-            style={{ 
-              backgroundSize: '300% 300%',
-              transition: 'all 1.5s cubic-bezier(0.22, 1, 0.36, 1)',
-              opacity: textOpacity
-            }}
-          >
-            {currentText}
-            {typing && (
-              <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 h-[60%] w-[2px] bg-accent animate-blink inline-block opacity-60"></span>
-            )}
-          </span>
+        <span>Creating</span>{" "}
+        <span 
+          ref={gradientTextRef}
+          className="gradient-text animate-gradient"
+          style={{ 
+            backgroundSize: '300% 300%',
+            transition: 'all 1.5s cubic-bezier(0.22, 1, 0.36, 1)',
+            opacity: textOpacity
+          }}
+        >
+          {currentText}
+          {typing && (
+            <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 h-[60%] w-[2px] bg-accent animate-blink inline-block opacity-60"></span>
+          )}
         </span>{" "}
-        <span className="block md:inline">experiences with purpose and precision.</span>
+        <span>experiences with purpose</span>{" "}
+        <span>and precision.</span>
       </h1>
       
       <p 

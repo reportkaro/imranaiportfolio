@@ -449,3 +449,35 @@ p {
 .animate-fade-in-out-delay {
   animation: fade-in-out 3s ease-in-out 1.5s infinite;
 }
+
+/* Hero heading styles for better text alignment */
+.hero-heading {
+  line-height: 1.1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1em;
+  letter-spacing: -0.03em;
+}
+
+.hero-heading .gradient-text,
+.hero-heading .colored-text {
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Improve responsive behavior for hero headings */
+@media (max-width: 640px) {
+  .hero-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  
+  .hero-heading > span {
+    display: inline-block;
+    margin-bottom: 0.1em;
+  }
+}
