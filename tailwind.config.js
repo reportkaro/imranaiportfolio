@@ -24,6 +24,8 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-sans)'],
         mono: ['var(--font-mono)'],
+        'geist-sans': ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
+        'geist-mono': ['var(--font-geist-mono)', 'monospace'],
       },
       typography: {
         DEFAULT: {
