@@ -449,13 +449,3 @@ p {
 .animate-fade-in-out-delay {
   animation: fade-in-out 3s ease-in-out 1.5s infinite;
 }
-
-/* Typewriter cursor blink animation */
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-.animate-blink {
-  animation: blink 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
-}
