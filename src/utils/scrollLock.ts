@@ -44,48 +44,26 @@ export const toggleScrollLock = (lock: boolean): void => {
   // Don't do anything on the server
   if (typeof document === 'undefined') return;
   
+  // Store the scroll position
+  const scrollY = window.scrollY;
+  
   if (lock) {
-    // Store current scroll position
-    const scrollY = window.scrollY;
-    
-    // Calculate scrollbar width to prevent layout shift
-    const hasScrollbar = window.innerWidth > document.documentElement.clientWidth;
-    const scrollbarWidth = hasScrollbar ? getScrollbarWidth() : 0;
-    
-    // Save original styles before modifying
-    originalStyles = {
-      overflow: document.body.style.overflow,
-      position: document.body.style.position,
-      top: document.body.style.top,
-      width: document.body.style.width,
-      paddingRight: document.body.style.paddingRight
-    };
-    
-    // Apply scroll lock
+    // Simplest approach: just set overflow hidden on html and body
+    document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.width = '100%';
     
-    // Add padding to compensate for scrollbar removal
-    if (scrollbarWidth > 0) {
-      document.body.style.paddingRight = `${scrollbarWidth}px`;
-    }
+    // Set a data attribute to store the scroll position
+    document.body.dataset.scrollPosition = scrollY.toString();
   } else {
-    // Restore original styles and scroll position
-    document.body.style.overflow = originalStyles.overflow || '';
-    document.body.style.position = originalStyles.position || '';
-    document.body.style.paddingRight = originalStyles.paddingRight || '';
+    // Restore scrolling
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
     
-    // Get scroll position from body top property
-    const scrollY = document.body.style.top
-      ? parseInt(document.body.style.top || '0') * -1
-      : 0;
+    // Get the stored position
+    const storedPosition = document.body.dataset.scrollPosition || '0';
+    const parsedPosition = parseInt(storedPosition, 10);
     
-    document.body.style.top = originalStyles.top || '';
-    document.body.style.width = originalStyles.width || '';
-    
-    // Restore scroll position
-    window.scrollTo(0, scrollY);
+    // Restore the scroll position
+    window.scrollTo(0, parsedPosition);
   }
 }; 

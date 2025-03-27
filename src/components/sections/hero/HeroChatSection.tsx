@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import ChatInterface from '../../ui/ChatInterface';
 
 interface HeroChatSectionProps {
-  closeChat: () => void;
+  closeChat: (e?: React.MouseEvent) => void;
 }
 
 const HeroChatSection = ({ closeChat }: HeroChatSectionProps) => {
