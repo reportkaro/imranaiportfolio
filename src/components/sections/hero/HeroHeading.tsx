@@ -14,12 +14,15 @@ const HeroHeading = ({ isVisible, aiTextOptions }: HeroHeadingProps) => {
   const gradientTextRef = useRef<HTMLSpanElement>(null);
   
   // Set up text cycling for the dynamic text options
-  const { currentText, textOpacity, typing } = useTextCycling({
-    texts: aiTextOptions
+  const { currentText, typing, deleting } = useTextCycling({
+    texts: aiTextOptions,
+    typingSpeed: 2000,
+    pauseDuration: 3000,
+    charSpeed: 40
   });
   
   // Set up mouse tracking for the gradient effect
-  const { elementRef } = useMouseTracking<HTMLElement>({
+  const { elementRef } = useMouseTracking<HTMLDivElement>({
     onMouseMove: (element, position) => {
       if (gradientTextRef.current) {
         applyGradientShift(gradientTextRef.current, position);
@@ -39,24 +42,24 @@ const HeroHeading = ({ isVisible, aiTextOptions }: HeroHeadingProps) => {
       ref={elementRef}
     >
       <h1 
-        className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-tight tracking-tight ${
+        className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-tight tracking-tight transition-all duration-700 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
         }`}
       >
         <span className="inline">Creating{" "}</span>
-        <span className="relative inline-block">
+        <span className="relative inline-block" style={{ minWidth: "260px" }}>
           <span 
             ref={gradientTextRef}
             className="gradient-text animate-gradient"
             style={{ 
               backgroundSize: '300% 300%',
-              transition: 'all 1.5s cubic-bezier(0.22, 1, 0.36, 1)',
-              opacity: textOpacity
+              display: 'inline-block',
+              width: 'auto'
             }}
           >
             {currentText}
             {typing && (
-              <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 h-[60%] w-[2px] bg-accent animate-blink inline-block opacity-60"></span>
+              <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 h-[60%] w-[3px] bg-accent animate-blink inline-block opacity-90"></span>
             )}
           </span>
         </span>{" "}
@@ -64,7 +67,7 @@ const HeroHeading = ({ isVisible, aiTextOptions }: HeroHeadingProps) => {
       </h1>
       
       <p 
-        className={`text-lg md:text-xl text-muted mb-0 max-w-2xl leading-relaxed ${
+        className={`text-lg md:text-xl text-muted mb-0 max-w-2xl leading-relaxed transition-all duration-700 delay-300 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
         }`}
       >
