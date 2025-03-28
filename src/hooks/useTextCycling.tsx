@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect, useCallback } from 'react';
 
 /**
@@ -12,6 +14,8 @@ export interface TextCyclingOptions {
   pauseDuration?: number;
   /** Whether to start automatically */
   autoStart?: boolean;
+  /** Speed of typing each character in milliseconds */
+  charSpeed?: number;
 }
 
 /**
@@ -45,44 +49,80 @@ export type TextCyclingStatus = 'typing' | 'deleting' | 'pausing';
  */
 export const useTextCycling = ({ 
   texts, 
-  typingSpeed = 2000, 
-  pauseDuration = 2000,
-  autoStart = true
+  typingSpeed = 1500, 
+  pauseDuration = 3000,
+  autoStart = true,
+  charSpeed = 40
 }: TextCyclingOptions): TextCyclingResult => {
+  // Ensure we have at least one text to display
+  const validTexts = texts && texts.length > 0 ? texts : ["Text"];
+  
   const [index, setIndex] = useState<number>(0);
-  const [currentText, setCurrentText] = useState<string>(texts[0]);
+  const [currentText, setCurrentText] = useState<string>('');
+  const [fullText, setFullText] = useState<string>(validTexts[0]);
   const [textOpacity, setTextOpacity] = useState<number>(1);
   const [status, setStatus] = useState<TextCyclingStatus>(autoStart ? 'typing' : 'pausing');
+  const [charIndex, setCharIndex] = useState<number>(0);
 
+  // Function to advance to the next word - synchronously moves to next word
   const next = useCallback((): void => {
-    const nextIndex = (index + 1) % texts.length;
+    const nextIndex = (index + 1) % validTexts.length;
     setIndex(nextIndex);
-    setCurrentText(texts[nextIndex]);
-  }, [index, texts]);
+    setFullText(validTexts[nextIndex]);
+    setCharIndex(0);
+    setCurrentText(''); // Clear text before starting to type the new word
+    setStatus('typing'); // Immediately start typing - no gap
+  }, [index, validTexts]);
 
+  // Initial setup on mount - start with the first word
+  useEffect(() => {
+    // Force-start typing on initial render
+    if (currentText === '' && status === 'typing' && charIndex === 0) {
+      setCurrentText(fullText.substring(0, 1));
+      setCharIndex(1);
+    }
+  }, [currentText, status, charIndex, fullText]);
+
+  // Effect for typing animation
   useEffect(() => {
     let timer: NodeJS.Timeout;
 
     if (status === 'typing') {
-      setTextOpacity(1);
-      timer = setTimeout(() => {
-        setStatus('pausing');
-      }, typingSpeed);
+      // Character-by-character typing
+      if (charIndex < fullText.length) {
+        timer = setTimeout(() => {
+          setCurrentText(fullText.substring(0, charIndex + 1));
+          setCharIndex(charIndex + 1);
+        }, charSpeed);
+      } else {
+        // Finished typing
+        timer = setTimeout(() => {
+          setStatus('pausing');
+        }, 50); // Short delay to ensure typing is complete
+      }
     } 
     else if (status === 'pausing') {
+      // Keep text visible during pause
       timer = setTimeout(() => {
         setStatus('deleting');
+        setCharIndex(fullText.length);
       }, pauseDuration);
     }
     else if (status === 'deleting') {
-      timer = setTimeout(() => {
+      // Character-by-character deletion
+      if (charIndex > 0) {
+        timer = setTimeout(() => {
+          setCurrentText(fullText.substring(0, charIndex - 1));
+          setCharIndex(charIndex - 1);
+        }, charSpeed / 1.5); // Delete slightly faster than typing
+      } else {
+        // When fully deleted, immediately go to next word without delay
         next();
-        setStatus('typing');
-      }, typingSpeed);
+      }
     }
 
     return () => clearTimeout(timer);
-  }, [status, pauseDuration, typingSpeed, next]);
+  }, [status, pauseDuration, charIndex, fullText, charSpeed, next]);
 
   return { 
     currentText, 
