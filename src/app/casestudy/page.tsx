@@ -7,7 +7,7 @@ import CaseStudyFooter from '@/components/case-studies/CaseStudyFooter';
 
 export default function CaseStudy() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <main className="min-h-screen bg-gradient-to-b from-indigo-50/30 to-gray-100">
       {/* Top Navigation */}
       <div className="bg-white shadow-sm z-10">
         <div className="container mx-auto px-4 max-w-5xl">
@@ -40,7 +40,7 @@ export default function CaseStudy() {
              
             </motion.div>
             
-            <div className="prose prose-lg max-w-none mb-10 bg-white p-8 rounded-lg shadow-sm border-l-4 border-indigo-500">
+            <div className="prose prose-lg max-w-none mb-10 bg-gradient-to-r from-white to-indigo-50 p-8 rounded-lg shadow-md border-l-4 border-indigo-500">
               <p className="m-0">
                 As a product designer for LessonLoom, I led the design process for an innovative platform that automates the creation of educational materials using AI and templating systems. This case study walks through how our design team approached this complex challenge – from understanding user needs and pain points to crafting an intuitive interface that empowers educators to create high-quality content at scale.
               </p>
@@ -56,7 +56,7 @@ export default function CaseStudy() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div 
-              className="bg-white p-6 rounded-lg shadow-sm border-t-4 border-purple-500"
+              className="bg-purple-50 p-6 rounded-lg shadow-md border-t-4 border-purple-500"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -67,7 +67,7 @@ export default function CaseStudy() {
             </motion.div>
             
             <motion.div 
-              className="bg-white p-6 rounded-lg shadow-sm border-t-4 border-indigo-500"
+              className="bg-indigo-50 p-6 rounded-lg shadow-md border-t-4 border-indigo-500"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -78,7 +78,7 @@ export default function CaseStudy() {
             </motion.div>
             
             <motion.div 
-              className="bg-white p-6 rounded-lg shadow-sm border-t-4 border-pink-500"
+              className="bg-pink-50 p-6 rounded-lg shadow-md border-t-4 border-pink-500"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -154,7 +154,7 @@ export default function CaseStudy() {
           </CaseStudyHeader>
           
           <div className="space-y-12 max-w-none">
-            <div className="bg-white p-8 rounded-lg shadow-sm">
+            <div className="bg-gradient-to-r from-white to-purple-50/70 p-8 rounded-lg shadow-md">
               <CaseStudyHeader level="h3" showGradientLine={false}>
                 Research & Discovery
               </CaseStudyHeader>
@@ -236,49 +236,51 @@ export default function CaseStudy() {
                 Key Insights
               </CaseStudyHeader>
               
-              <div className="prose prose-lg max-w-none">
-                <p>
-                  Our research revealed critical insights that shaped our design approach:
-                </p>
-                
-                <div className="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-lg mt-6">
-                  <ol className="space-y-4 pl-0 list-none">
-                    <li className="flex items-start p-4 bg-white rounded-lg shadow-sm">
-                      <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-purple-100 text-purple-700 text-lg font-bold shrink-0">1</span>
-                      <div>
-                        <strong className="text-purple-700">Creators valued pedagogical decisions, not formatting:</strong>
-                        <p className="mt-1 text-gray-700 italic">&quot;I spend 70% of my time making things look right rather than thinking about how students will learn.&quot;</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start p-4 bg-white rounded-lg shadow-sm">
-                      <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-indigo-100 text-indigo-700 text-lg font-bold shrink-0">2</span>
-                      <div>
-                        <strong className="text-indigo-700">Templates were mental models, not just documents:</strong>
-                        <p className="mt-1 text-gray-700 italic">&quot;We already have mental templates we follow, but they&apos;re not captured anywhere.&quot;</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start p-4 bg-white rounded-lg shadow-sm">
-                      <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-pink-100 text-pink-700 text-lg font-bold shrink-0">3</span>
-                      <div>
-                        <strong className="text-pink-700">Content needs varied by subject:</strong>
-                        <p className="mt-1 text-gray-700 italic">&quot;Math lessons follow very predictable patterns, while reading comprehension needs more flexibility.&quot;</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start p-4 bg-white rounded-lg shadow-sm">
-                      <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-purple-100 text-purple-700 text-lg font-bold shrink-0">4</span>
-                      <div>
-                        <strong className="text-purple-700">Visual clarity was essential:</strong>
-                        <p className="mt-1 text-gray-700 italic">&quot;I need to see exactly how the final lesson will appear to teachers.&quot;</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start p-4 bg-white rounded-lg shadow-sm">
-                      <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-indigo-100 text-indigo-700 text-lg font-bold shrink-0">5</span>
-                      <div>
-                        <strong className="text-indigo-700">Trust in automation was fragile:</strong>
-                        <p className="mt-1 text-gray-700 italic">&quot;I&apos;d use automation if I could verify and adjust the output easily.&quot;</p>
-                      </div>
-                    </li>
-                  </ol>
+              <div className="bg-gradient-to-r from-white to-indigo-50/70 p-8 rounded-lg shadow-md">
+                <div className="prose prose-lg max-w-none">
+                  <p>
+                    Our research revealed critical insights that shaped our design approach:
+                  </p>
+                  
+                  <div className="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-lg mt-6">
+                    <ol className="space-y-4 pl-0 list-none">
+                      <li className="flex items-start p-4 bg-white rounded-lg shadow-sm">
+                        <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-purple-100 text-purple-700 text-lg font-bold shrink-0">1</span>
+                        <div>
+                          <strong className="text-purple-700">Creators valued pedagogical decisions, not formatting:</strong>
+                          <p className="mt-1 text-gray-700 italic">&quot;I spend 70% of my time making things look right rather than thinking about how students will learn.&quot;</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start p-4 bg-white rounded-lg shadow-sm">
+                        <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-indigo-100 text-indigo-700 text-lg font-bold shrink-0">2</span>
+                        <div>
+                          <strong className="text-indigo-700">Templates were mental models, not just documents:</strong>
+                          <p className="mt-1 text-gray-700 italic">&quot;We already have mental templates we follow, but they&apos;re not captured anywhere.&quot;</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start p-4 bg-white rounded-lg shadow-sm">
+                        <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-pink-100 text-pink-700 text-lg font-bold shrink-0">3</span>
+                        <div>
+                          <strong className="text-pink-700">Content needs varied by subject:</strong>
+                          <p className="mt-1 text-gray-700 italic">&quot;Math lessons follow very predictable patterns, while reading comprehension needs more flexibility.&quot;</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start p-4 bg-white rounded-lg shadow-sm">
+                        <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-purple-100 text-purple-700 text-lg font-bold shrink-0">4</span>
+                        <div>
+                          <strong className="text-purple-700">Visual clarity was essential:</strong>
+                          <p className="mt-1 text-gray-700 italic">&quot;I need to see exactly how the final lesson will appear to teachers.&quot;</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start p-4 bg-white rounded-lg shadow-sm">
+                        <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-indigo-100 text-indigo-700 text-lg font-bold shrink-0">5</span>
+                        <div>
+                          <strong className="text-indigo-700">Trust in automation was fragile:</strong>
+                          <p className="mt-1 text-gray-700 italic">&quot;I&apos;d use automation if I could verify and adjust the output easily.&quot;</p>
+                        </div>
+                      </li>
+                    </ol>
+                  </div>
                 </div>
               </div>
             </div>
@@ -295,14 +297,16 @@ export default function CaseStudy() {
                 
                 {/* Concept 1: Template-Driven Generation */}
                 <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-sm opacity-90">
-                  <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex items-center justify-between">
-                    <div className="flex items-center">
-                      <div className="w-3 h-3 rounded-full bg-red-400 mr-2"></div>
-                      <div className="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div>
-                      <div className="w-3 h-3 rounded-full bg-green-400 mr-2"></div>
-                      <span className="text-sm text-gray-500 ml-2">Concept 1: Template-Driven Generation</span>
+                  <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex flex-wrap items-center gap-1">
+                      <div className="flex items-center flex-shrink-0">
+                        <div className="w-3 h-3 rounded-full bg-red-400 mr-1"></div>
+                        <div className="w-3 h-3 rounded-full bg-yellow-400 mr-1"></div>
+                        <div className="w-3 h-3 rounded-full bg-green-400 mr-1"></div>
+                      </div>
+                      <span className="text-sm text-gray-500 ml-1">Concept 1: Template-Driven Generation</span>
                     </div>
-                    <div className="text-xs text-gray-500 px-2">
+                    <div className="text-xs text-gray-500 px-2 flex-shrink-0">
                       Explored Concept
                     </div>
                   </div>
@@ -348,14 +352,16 @@ export default function CaseStudy() {
                 
                 {/* Concept 2: Content-First Approach */}
                 <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-sm opacity-90">
-                  <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex items-center justify-between">
-                    <div className="flex items-center">
-                      <div className="w-3 h-3 rounded-full bg-red-400 mr-2"></div>
-                      <div className="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div>
-                      <div className="w-3 h-3 rounded-full bg-green-400 mr-2"></div>
-                      <span className="text-sm text-gray-500 ml-2">Concept 2: Content-First Approach</span>
+                  <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex flex-wrap items-center gap-1">
+                      <div className="flex items-center flex-shrink-0">
+                        <div className="w-3 h-3 rounded-full bg-red-400 mr-1"></div>
+                        <div className="w-3 h-3 rounded-full bg-yellow-400 mr-1"></div>
+                        <div className="w-3 h-3 rounded-full bg-green-400 mr-1"></div>
+                      </div>
+                      <span className="text-sm text-gray-500 ml-1">Concept 2: Content-First Approach</span>
                     </div>
-                    <div className="text-xs text-gray-500 px-2">
+                    <div className="text-xs text-gray-500 px-2 flex-shrink-0">
                       Explored Concept
                     </div>
                   </div>
@@ -405,14 +411,16 @@ export default function CaseStudy() {
                 
                 {/* Concept 3: Hybrid Approach */}
                 <div className="my-8 border-2 border-purple-500 rounded-lg overflow-hidden shadow-md bg-gradient-to-r from-white to-purple-50">
-                  <div className="bg-purple-100 px-4 py-3 border-b border-purple-200 flex items-center justify-between">
-                    <div className="flex items-center">
-                      <div className="w-3 h-3 rounded-full bg-red-400 mr-2"></div>
-                      <div className="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div>
-                      <div className="w-3 h-3 rounded-full bg-green-400 mr-2"></div>
-                      <span className="text-sm text-gray-700 ml-2 font-medium">Concept 3: Hybrid Approach (Final Design)</span>
+                  <div className="bg-purple-100 px-4 py-3 border-b border-purple-200 flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex flex-wrap items-center gap-1">
+                      <div className="flex items-center flex-shrink-0">
+                        <div className="w-3 h-3 rounded-full bg-red-400 mr-1"></div>
+                        <div className="w-3 h-3 rounded-full bg-yellow-400 mr-1"></div>
+                        <div className="w-3 h-3 rounded-full bg-green-400 mr-1"></div>
+                      </div>
+                      <span className="text-sm text-gray-700 ml-1 font-medium">Concept 3: Hybrid Approach (Final Design)</span>
                     </div>
-                    <div className="bg-purple-600 text-white text-xs px-3 py-1 rounded-full font-medium">
+                    <div className="bg-purple-600 text-white text-xs px-3 py-1 rounded-full font-medium flex-shrink-0">
                       Selected Approach ✓
                     </div>
                   </div>
@@ -477,7 +485,7 @@ export default function CaseStudy() {
           </CaseStudyHeader>
           
           <div className="space-y-12 max-w-none">
-            <div className="bg-white p-8 rounded-lg shadow-sm">
+            <div className="bg-gradient-to-r from-white to-purple-50 p-8 rounded-lg shadow-md">
               <h3 className="text-2xl font-semibold mb-5 text-gray-800">Information Architecture</h3>
               
               <div className="prose prose-lg max-w-none">
@@ -502,7 +510,7 @@ export default function CaseStudy() {
                 </p>
 
                 {/* Content Spreadsheet Wireframe */}
-                <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-md">
                   <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex items-center">
                     <div className="w-3 h-3 rounded-full bg-red-400 mr-2"></div>
                     <div className="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div>
@@ -556,7 +564,7 @@ export default function CaseStudy() {
                 </div>
 
                 {/* Template Library Wireframe */}
-                <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-md">
                   <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex items-center">
                     <div className="w-3 h-3 rounded-full bg-red-400 mr-2"></div>
                     <div className="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div>
@@ -617,7 +625,7 @@ export default function CaseStudy() {
                 </div>
 
                 {/* Generation Interface Wireframe */}
-                <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-md">
                   <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex items-center">
                     <div className="w-3 h-3 rounded-full bg-red-400 mr-2"></div>
                     <div className="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div>
@@ -688,7 +696,7 @@ export default function CaseStudy() {
               </div>
             </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-sm">
+            <div className="bg-gradient-to-r from-white to-indigo-50 p-8 rounded-lg shadow-md">
               <h3 className="text-2xl font-semibold mb-5 text-gray-800">Visual System & Interface Design</h3>
               
               <div className="prose prose-lg max-w-none space-y-8">
@@ -699,7 +707,7 @@ export default function CaseStudy() {
                     One of my key design challenges was creating a visual language that would clearly communicate different types of automation. Working with content specialists, I developed a syntax system using familiar word processing concepts:
                   </p>
                   
-                  <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                  <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-md">
                     <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex items-center">
                       <div className="w-3 h-3 rounded-full bg-red-400 mr-2"></div>
                       <div className="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div>
@@ -759,13 +767,15 @@ export default function CaseStudy() {
                     I designed a step-by-step workflow that provided transparency and control:
                   </p>
                   
-                  <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
-                    <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex items-center justify-between">
-                      <div className="flex items-center">
-                        <div className="w-3 h-3 rounded-full bg-red-400 mr-2"></div>
-                        <div className="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div>
-                        <div className="w-3 h-3 rounded-full bg-green-400 mr-2"></div>
-                        <span className="text-sm text-gray-500 ml-2">Generate lessons</span>
+                  <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-md">
+                    <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex flex-wrap items-center justify-between gap-2">
+                      <div className="flex flex-wrap items-center gap-1">
+                        <div className="flex items-center flex-shrink-0">
+                          <div className="w-3 h-3 rounded-full bg-red-400 mr-1"></div>
+                          <div className="w-3 h-3 rounded-full bg-yellow-400 mr-1"></div>
+                          <div className="w-3 h-3 rounded-full bg-green-400 mr-1"></div>
+                        </div>
+                        <span className="text-sm text-gray-500 ml-1">Generate lessons</span>
                       </div>
                       <div className="text-xs text-gray-500">
                         <button className="bg-transparent border-none p-0">
@@ -775,77 +785,77 @@ export default function CaseStudy() {
                         </button>
                       </div>
                     </div>
-                    <div className="p-8 bg-white">
-                      {/* New workflow based on image */}
-                      <div className="flex justify-between items-center mb-12 relative">
-                        {/* Progress bar */}
-                        <div className="absolute h-[1px] bg-gray-200 top-5 left-0 right-0 z-0"></div>
+                    <div className="p-4 md:p-8 bg-white">
+                      {/* New workflow based on image - responsive version */}
+                      <div className="flex flex-wrap justify-between mb-12 relative">
+                        {/* Progress bar - hidden on mobile, visible on md+ */}
+                        <div className="absolute h-[1px] bg-gray-200 top-5 left-0 right-0 z-0 hidden md:block"></div>
                         
                         {/* Step 1: Upload template library - Current */}
-                        <div className="flex flex-col items-center relative z-10">
+                        <div className="flex flex-col items-center relative z-10 w-1/2 md:w-auto mb-6 md:mb-0">
                           <div className="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center mb-3">
                             <span>1</span>
                           </div>
-                          <span className="text-sm font-medium text-indigo-600">Upload template library</span>
+                          <span className="text-xs md:text-sm text-center font-medium text-indigo-600">Upload template library</span>
                         </div>
                         
                         {/* Step 2: Upload spreadsheet */}
-                        <div className="flex flex-col items-center relative z-10">
+                        <div className="flex flex-col items-center relative z-10 w-1/2 md:w-auto mb-6 md:mb-0">
                           <div className="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center mb-3">
                             <span>2</span>
                           </div>
-                          <span className="text-sm text-gray-500">Upload spreadsheet</span>
+                          <span className="text-xs md:text-sm text-center text-gray-500">Upload spreadsheet</span>
                         </div>
                         
                         {/* Step 3: Select content */}
-                        <div className="flex flex-col items-center relative z-10">
+                        <div className="flex flex-col items-center relative z-10 w-1/2 md:w-auto mb-6 md:mb-0">
                           <div className="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center mb-3">
                             <span>3</span>
                           </div>
-                          <span className="text-sm text-gray-500">Select content</span>
+                          <span className="text-xs md:text-sm text-center text-gray-500">Select content</span>
                         </div>
                         
                         {/* Step 4: Select lessons */}
-                        <div className="flex flex-col items-center relative z-10">
+                        <div className="flex flex-col items-center relative z-10 w-1/2 md:w-auto mb-6 md:mb-0">
                           <div className="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center mb-3">
                             <span>4</span>
                           </div>
-                          <span className="text-sm text-gray-500">Select lessons</span>
+                          <span className="text-xs md:text-sm text-center text-gray-500">Select lessons</span>
                         </div>
                         
                         {/* Step 5: Generate lessons */}
-                        <div className="flex flex-col items-center relative z-10">
+                        <div className="flex flex-col items-center relative z-10 w-1/2 md:w-auto mb-6 md:mb-0">
                           <div className="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center mb-3">
                             <span>5</span>
                           </div>
-                          <span className="text-sm text-gray-500">Generate lessons</span>
+                          <span className="text-xs md:text-sm text-center text-gray-500">Generate lessons</span>
                         </div>
                         
                         {/* Step 6: Summary */}
-                        <div className="flex flex-col items-center relative z-10">
+                        <div className="flex flex-col items-center relative z-10 w-1/2 md:w-auto mb-6 md:mb-0">
                           <div className="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center mb-3">
                             <span>6</span>
                           </div>
-                          <span className="text-sm text-gray-500">Summary</span>
+                          <span className="text-xs md:text-sm text-center text-gray-500">Summary</span>
                         </div>
                       </div>
                       
                       {/* Upload template library content */}
-                      <div className="border border-gray-200 rounded-lg p-8 flex flex-col items-center justify-center">
+                      <div className="border border-gray-200 rounded-lg p-4 md:p-8 flex flex-col items-center justify-center">
                         <div className="text-center mb-6">
-                          <h3 className="text-xl font-medium mb-2">Upload template library</h3>
-                          <p className="text-gray-500">Drag and drop template library here to upload.</p>
-                          <p className="text-gray-500">Template library should be in .docx format.</p>
+                          <h3 className="text-lg md:text-xl font-medium mb-2">Upload template library</h3>
+                          <p className="text-sm md:text-base text-gray-500">Drag and drop template library here to upload.</p>
+                          <p className="text-sm md:text-base text-gray-500">Template library should be in .docx format.</p>
                         </div>
                         
-                        <div className="w-16 h-16 mb-6">
+                        <div className="w-12 h-12 md:w-16 md:h-16 mb-6">
                           <svg xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                           </svg>
                         </div>
                         
-                        <button className="flex items-center px-5 py-2 bg-white border border-indigo-600 rounded-md text-indigo-600 font-medium">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <button className="flex items-center px-4 py-2 bg-white border border-indigo-600 rounded-md text-indigo-600 text-sm md:text-base font-medium">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                           </svg>
                           Choose file
@@ -854,7 +864,7 @@ export default function CaseStudy() {
                       
                       {/* Footer with proceed button */}
                       <div className="flex justify-end mt-8">
-                        <button className="px-6 py-2 bg-gray-200 text-gray-600 rounded-md">
+                        <button className="px-4 md:px-6 py-2 bg-gray-200 text-gray-600 rounded-md text-sm md:text-base">
                           Proceed
                         </button>
                       </div>
@@ -862,32 +872,32 @@ export default function CaseStudy() {
                   </div>
                   
                   <ul className="space-y-2 pl-0 list-none">
-                    <li className="mb-2 flex items-baseline">
-                      <span className="font-semibold mr-2 text-purple-700">Upload Template Library:</span>
+                    <li className="mb-2 flex flex-wrap items-baseline">
+                      <span className="font-semibold mr-2 text-purple-700 whitespace-nowrap">Upload Template Library:</span>
                       <span>Visual confirmation of successful template upload</span>
                     </li>
-                    <li className="mb-2 flex items-baseline">
-                      <span className="font-semibold mr-2 text-purple-700">Upload Content Spreadsheet:</span>
+                    <li className="mb-2 flex flex-wrap items-baseline">
+                      <span className="font-semibold mr-2 text-purple-700 whitespace-nowrap">Upload Content Spreadsheet:</span>
                       <span>Data validation with clear error messaging</span>
                     </li>
-                    <li className="mb-2 flex items-baseline">
-                      <span className="font-semibold mr-2 text-purple-700">Select Content Tab:</span>
+                    <li className="mb-2 flex flex-wrap items-baseline">
+                      <span className="font-semibold mr-2 text-purple-700 whitespace-nowrap">Select Content Tab:</span>
                       <span>Choice of which set of lessons to generate</span>
                     </li>
-                    <li className="mb-2 flex items-baseline">
-                      <span className="font-semibold mr-2 text-purple-700">Select Lessons:</span>
+                    <li className="mb-2 flex flex-wrap items-baseline">
+                      <span className="font-semibold mr-2 text-purple-700 whitespace-nowrap">Select Lessons:</span>
                       <span>Flexible selection of individual or batched lessons</span>
                     </li>
-                    <li className="mb-2 flex items-baseline">
-                      <span className="font-semibold mr-2 text-purple-700">Preview First Lesson:</span>
+                    <li className="mb-2 flex flex-wrap items-baseline">
+                      <span className="font-semibold mr-2 text-purple-700 whitespace-nowrap">Preview First Lesson:</span>
                       <span>Review point before batch generation</span>
                     </li>
-                    <li className="mb-2 flex items-baseline">
-                      <span className="font-semibold mr-2 text-purple-700">Generation Progress:</span>
+                    <li className="mb-2 flex flex-wrap items-baseline">
+                      <span className="font-semibold mr-2 text-purple-700 whitespace-nowrap">Generation Progress:</span>
                       <span>Visual feedback on generation status</span>
                     </li>
-                    <li className="mb-2 flex items-baseline">
-                      <span className="font-semibold mr-2 text-purple-700">Download Results:</span>
+                    <li className="mb-2 flex flex-wrap items-baseline">
+                      <span className="font-semibold mr-2 text-purple-700 whitespace-nowrap">Download Results:</span>
                       <span>Easy access to completed materials</span>
                     </li>
                   </ul>
@@ -900,7 +910,7 @@ export default function CaseStudy() {
                     The review interface was crucial for building trust in the system:
                   </p>
                   
-                  <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                  <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-md">
                     <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex items-center">
                       <div className="w-3 h-3 rounded-full bg-red-400 mr-2"></div>
                       <div className="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div>
@@ -954,38 +964,40 @@ export default function CaseStudy() {
             Prototype & Testing
           </CaseStudyHeader>
           
-          <div className="bg-white p-8 rounded-lg shadow-sm">
+          <div className="bg-gradient-to-r from-white to-indigo-50 p-8 rounded-lg shadow-md">
             <div className="prose prose-lg max-w-none">
               <p className="mb-6">
                 I created interactive prototypes in Figma to test the user experience with real curriculum specialists:
               </p>
               
               {/* Template Creation Test Wireframe */}
-              <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
-                <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex items-center justify-between">
-                  <div className="flex items-center">
-                    <div className="w-3 h-3 rounded-full bg-red-400 mr-2"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-400 mr-2"></div>
-                    <span className="text-sm text-gray-500 ml-2">Prototype 1: Template Creation Test</span>
+              <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-md">
+                <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex flex-wrap items-center justify-between gap-2">
+                  <div className="flex flex-wrap items-center gap-1">
+                    <div className="flex items-center flex-shrink-0">
+                      <div className="w-3 h-3 rounded-full bg-red-400 mr-1"></div>
+                      <div className="w-3 h-3 rounded-full bg-yellow-400 mr-1"></div>
+                      <div className="w-3 h-3 rounded-full bg-green-400 mr-1"></div>
+                    </div>
+                    <span className="text-sm text-gray-500 ml-1">Prototype 1: Template Creation Test</span>
                   </div>
-                  <div className="text-xs text-gray-500 px-2 bg-blue-100 rounded-full">
+                  <div className="text-xs text-gray-500 px-2 bg-blue-100 rounded-full flex-shrink-0">
                     User Testing
                   </div>
                 </div>
-                <div className="p-6 bg-white">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="p-4 md:p-6 bg-white">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                     <div>
-                      <h4 className="text-lg font-medium mb-3">Test Objectives</h4>
-                      <ul className="text-sm text-gray-600 list-disc pl-5 space-y-2">
+                      <h4 className="text-lg font-medium mb-2 md:mb-3">Test Objectives</h4>
+                      <ul className="text-sm text-gray-600 list-disc pl-5 space-y-1 md:space-y-2">
                         <li>Evaluate how easily users could understand the template syntax</li>
                         <li>Test comprehension of different syntax elements (red text, highlighting, etc.)</li>
                         <li>Measure time to create a basic template</li>
                         <li>Identify points of confusion in the template creation process</li>
                       </ul>
                       
-                      <div className="mt-4 bg-purple-50 p-3 rounded-lg">
-                        <h5 className="text-sm font-medium mb-2">Key Findings</h5>
+                      <div className="mt-3 md:mt-4 bg-purple-50 p-3 rounded-lg">
+                        <h5 className="text-sm font-medium mb-1 md:mb-2">Key Findings</h5>
                         <ul className="text-xs text-gray-600 list-disc pl-4 space-y-1">
                           <li>Users struggled with distinguishing between variable types</li>
                           <li>Syntax highlighting significantly improved comprehension</li>
@@ -995,8 +1007,8 @@ export default function CaseStudy() {
                       </div>
                     </div>
                     
-                    <div className="border border-gray-200 rounded-lg p-4 bg-white">
-                      <div className="border-b border-gray-200 pb-2 mb-3 flex justify-between items-center">
+                    <div className="border border-gray-200 rounded-lg p-3 md:p-4 bg-white">
+                      <div className="border-b border-gray-200 pb-2 mb-2 md:mb-3 flex flex-wrap justify-between items-center gap-2">
                         <span className="text-sm font-medium">Template Editor Prototype</span>
                         <div className="flex space-x-2">
                           <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 text-xs">?</div>
@@ -1008,7 +1020,7 @@ export default function CaseStudy() {
                         </div>
                       </div>
                       
-                      <div className="flex space-x-2 mb-3">
+                      <div className="flex flex-wrap gap-2 mb-3">
                         <div className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">File</div>
                         <div className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">Edit</div>
                         <div className="px-2 py-1 bg-purple-100 text-purple-600 rounded text-xs font-medium">Format</div>
@@ -1016,8 +1028,8 @@ export default function CaseStudy() {
                         <div className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">Help</div>
                       </div>
                       
-                      <div className="border border-gray-200 rounded p-3 bg-gray-50">
-                        <div className="text-xs font-mono leading-relaxed">
+                      <div className="border border-gray-200 rounded p-2 md:p-3 bg-gray-50">
+                        <div className="text-xs font-mono leading-relaxed overflow-x-auto">
                           <p className="mb-1">{"<Lesson Title: "}<span className="text-red-600">{"{{TOPIC}}"}</span>{" for "}<span className="text-red-600">{"{{GRADE}}"}</span>{">"}</p>
                           <p className="mb-1">{"Subject: "}<span className="text-red-600">{"{{SUBJECT}}"}</span></p>
                           <p className="mb-1">{"Duration: "}<span className="text-red-600">{"{{DURATION}}"}</span>{" minutes"}</p>
@@ -1027,7 +1039,7 @@ export default function CaseStudy() {
                         </div>
                       </div>
                       
-                      <div className="mt-3 flex justify-between">
+                      <div className="mt-3 flex flex-wrap justify-between gap-2">
                         <div className="px-2 py-1 bg-purple-100 text-purple-600 rounded text-xs">Syntax Guide</div>
                         <div className="px-2 py-1 bg-green-100 text-green-600 rounded text-xs">Preview Template</div>
                       </div>
@@ -1037,31 +1049,33 @@ export default function CaseStudy() {
               </div>
               
               {/* Content Planning Test Wireframe */}
-              <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
-                <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex items-center justify-between">
-                  <div className="flex items-center">
-                    <div className="w-3 h-3 rounded-full bg-red-400 mr-2"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-400 mr-2"></div>
-                    <span className="text-sm text-gray-500 ml-2">Prototype 2: Content Planning Test</span>
+              <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-md">
+                <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex flex-wrap items-center justify-between gap-2">
+                  <div className="flex flex-wrap items-center gap-1">
+                    <div className="flex items-center flex-shrink-0">
+                      <div className="w-3 h-3 rounded-full bg-red-400 mr-1"></div>
+                      <div className="w-3 h-3 rounded-full bg-yellow-400 mr-1"></div>
+                      <div className="w-3 h-3 rounded-full bg-green-400 mr-1"></div>
+                    </div>
+                    <span className="text-sm text-gray-500 ml-1">Prototype 2: Content Planning Test</span>
                   </div>
-                  <div className="text-xs text-gray-500 px-2 bg-blue-100 rounded-full">
+                  <div className="text-xs text-gray-500 px-2 bg-blue-100 rounded-full flex-shrink-0">
                     User Testing
                   </div>
                 </div>
-                <div className="p-6 bg-white">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="p-4 md:p-6 bg-white">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                     <div>
-                      <h4 className="text-lg font-medium mb-3">Test Objectives</h4>
-                      <ul className="text-sm text-gray-600 list-disc pl-5 space-y-2">
+                      <h4 className="text-lg font-medium mb-2 md:mb-3">Test Objectives</h4>
+                      <ul className="text-sm text-gray-600 list-disc pl-5 space-y-1 md:space-y-2">
                         <li>Assess the spreadsheet structure's intuitiveness</li>
                         <li>Test content organization workflows</li>
                         <li>Evaluate validation feedback for data errors</li>
                         <li>Measure how quickly users could input a full lesson set</li>
                       </ul>
                       
-                      <div className="mt-4 bg-purple-50 p-3 rounded-lg">
-                        <h5 className="text-sm font-medium mb-2">Key Findings</h5>
+                      <div className="mt-3 md:mt-4 bg-purple-50 p-3 rounded-lg">
+                        <h5 className="text-sm font-medium mb-1 md:mb-2">Key Findings</h5>
                         <ul className="text-xs text-gray-600 list-disc pl-4 space-y-1">
                           <li>Users preferred templates for spreadsheet setup</li>
                           <li>Column validation significantly reduced errors</li>
@@ -1071,22 +1085,22 @@ export default function CaseStudy() {
                       </div>
                     </div>
                     
-                    <div className="border border-gray-200 rounded-lg p-4 bg-white">
-                      <div className="border-b border-gray-200 pb-2 mb-3 flex justify-between items-center">
+                    <div className="border border-gray-200 rounded-lg p-3 md:p-4 bg-white">
+                      <div className="border-b border-gray-200 pb-2 mb-2 md:mb-3 flex flex-wrap justify-between items-center gap-2">
                         <span className="text-sm font-medium">Spreadsheet Import Prototype</span>
-                        <div className="flex space-x-2">
+                        <div className="flex flex-wrap gap-2">
                           <div className="px-2 py-1 bg-green-100 text-green-600 rounded-full text-xs">Sample Template</div>
                           <div className="px-2 py-1 bg-blue-100 text-blue-600 rounded-full text-xs">Validate</div>
                         </div>
                       </div>
                       
                       <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 mb-3">
-                        <div className="flex justify-between items-center mb-3">
+                        <div className="flex flex-wrap justify-between items-center mb-3 gap-2">
                           <div className="text-xs font-medium">Upload Spreadsheet</div>
                           <div className="px-2 py-1 bg-purple-100 text-purple-600 rounded text-xs">Browse Files</div>
                         </div>
-                        <div className="border border-dashed border-gray-300 rounded-lg p-4 flex flex-col items-center justify-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div className="border border-dashed border-gray-300 rounded-lg p-3 md:p-4 flex flex-col items-center justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-8 md:w-8 text-gray-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                           </svg>
                           <p className="text-xs text-gray-500 text-center">Drag and drop your content spreadsheet<br/>or click to browse</p>
@@ -1110,31 +1124,33 @@ export default function CaseStudy() {
               </div>
               
               {/* Generation & Review Test Wireframe */}
-              <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
-                <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex items-center justify-between">
-                  <div className="flex items-center">
-                    <div className="w-3 h-3 rounded-full bg-red-400 mr-2"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-400 mr-2"></div>
-                    <span className="text-sm text-gray-500 ml-2">Prototype 3: Generation & Review Test</span>
+              <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-md">
+                <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex flex-wrap items-center justify-between gap-2">
+                  <div className="flex flex-wrap items-center gap-1">
+                    <div className="flex items-center flex-shrink-0">
+                      <div className="w-3 h-3 rounded-full bg-red-400 mr-1"></div>
+                      <div className="w-3 h-3 rounded-full bg-yellow-400 mr-1"></div>
+                      <div className="w-3 h-3 rounded-full bg-green-400 mr-1"></div>
+                    </div>
+                    <span className="text-sm text-gray-500 ml-1">Prototype 3: Generation & Review Test</span>
                   </div>
-                  <div className="text-xs text-gray-500 px-2 bg-blue-100 rounded-full">
+                  <div className="text-xs text-gray-500 px-2 bg-blue-100 rounded-full flex-shrink-0">
                     User Testing
                   </div>
                 </div>
-                <div className="p-6 bg-white">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="p-4 md:p-6 bg-white">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                     <div>
-                      <h4 className="text-lg font-medium mb-3">Test Objectives</h4>
-                      <ul className="text-sm text-gray-600 list-disc pl-5 space-y-2">
+                      <h4 className="text-lg font-medium mb-2 md:mb-3">Test Objectives</h4>
+                      <ul className="text-sm text-gray-600 list-disc pl-5 space-y-1 md:space-y-2">
                         <li>Measured users' comfort with the review process</li>
                         <li>Tested editing workflows for generated content</li>
                         <li>Evaluated trust in AI-generated outputs</li>
                         <li>Identified preferred feedback mechanisms</li>
                       </ul>
                       
-                      <div className="mt-4 bg-purple-50 p-3 rounded-lg">
-                        <h5 className="text-sm font-medium mb-2">Key Findings</h5>
+                      <div className="mt-3 md:mt-4 bg-purple-50 p-3 rounded-lg">
+                        <h5 className="text-sm font-medium mb-1 md:mb-2">Key Findings</h5>
                         <ul className="text-xs text-gray-600 list-disc pl-4 space-y-1">
                           <li>Side-by-side comparison was critical for trust</li>
                           <li>Users wanted more granular regeneration controls</li>
@@ -1158,7 +1174,7 @@ export default function CaseStudy() {
                           <div className="text-xs text-gray-500 mb-1">Template</div>
                           <div className="text-xs font-mono">
                             <p className="mb-1 text-gray-700">{"## Introduction"}</p>
-                            <p className="mb-1 bg-yellow-100 px-1 text-gray-700">{"Generate an engaging introduction to {{TOPIC}} suitable for {{GRADE}} students."}</p>
+                            <p className="mb-1 bg-yellow-200 px-1 text-gray-700">{"Generate an engaging introduction to {{TOPIC}} for {{GRADE}} students."}</p>
                           </div>
                         </div>
                         
@@ -1174,7 +1190,7 @@ export default function CaseStudy() {
                       <div className="flex flex-wrap gap-2 mb-3">
                         <div className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs flex items-center">
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 mr-1" viewBox="0 0 20 20" fill="currentColor">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                           </svg>
                           Accept
                         </div>
@@ -1205,7 +1221,7 @@ export default function CaseStudy() {
               </div>
               
               {/* Testing Iterations Visualization */}
-              <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+              <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-md">
                 <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex items-center">
                   <div className="w-3 h-3 rounded-full bg-red-400 mr-2"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div>
@@ -1341,27 +1357,27 @@ export default function CaseStudy() {
             Implementation & Collaboration
           </CaseStudyHeader>
           
-          <div className="bg-white p-8 rounded-lg shadow-sm">
+          <div className="bg-gradient-to-r from-white to-indigo-50 p-8 rounded-lg shadow-md">
             <div className="prose prose-lg max-w-none">
               <p className="mb-5">
                 Working closely with developers, I translated design concepts into implementation specifications:
               </p>
               
               <ul className="space-y-3 pl-0 list-none">
-                <li className="mb-3 flex items-baseline">
-                  <span className="font-semibold mr-2 text-purple-700">Design System Components:</span>
+                <li className="mb-3 flex flex-wrap items-baseline">
+                  <span className="font-semibold mr-2 text-purple-700 whitespace-nowrap mb-1">Design System Components:</span>
                   <span>Created a component library for the LessonLoom interface</span>
                 </li>
-                <li className="mb-3 flex items-baseline">
-                  <span className="font-semibold mr-2 text-purple-700">Visual Specification Documentation:</span>
+                <li className="mb-3 flex flex-wrap items-baseline">
+                  <span className="font-semibold mr-2 text-purple-700 whitespace-nowrap mb-1">Visual Specification Documentation:</span>
                   <span>Detailed specs for custom elements</span>
                 </li>
-                <li className="mb-3 flex items-baseline">
-                  <span className="font-semibold mr-2 text-purple-700">Interactive Prototypes:</span>
+                <li className="mb-3 flex flex-wrap items-baseline">
+                  <span className="font-semibold mr-2 text-purple-700 whitespace-nowrap mb-1">Interactive Prototypes:</span>
                   <span>Prototypes showing state transitions and interactions</span>
                 </li>
-                <li className="mb-3 flex items-baseline">
-                  <span className="font-semibold mr-2 text-purple-700">Regular Design Reviews:</span>
+                <li className="mb-3 flex flex-wrap items-baseline">
+                  <span className="font-semibold mr-2 text-purple-700 whitespace-nowrap mb-1">Regular Design Reviews:</span>
                   <span>Collaborative sessions with developers to review implementation</span>
                 </li>
               </ul>
@@ -1371,9 +1387,15 @@ export default function CaseStudy() {
               </p>
               
               <ul className="space-y-2 pl-0 list-none">
-                <li className="mb-2">Collaborated on API design to support the workflow requirements</li>
-                <li className="mb-2">Provided input on error handling and recovery experiences</li>
-                <li className="mb-2">Helped prioritize technical features based on user impact</li>
+                <li className="mb-2 flex flex-wrap items-baseline">
+                  <span className="w-full">Collaborated on API design to support the workflow requirements</span>
+                </li>
+                <li className="mb-2 flex flex-wrap items-baseline">
+                  <span className="w-full">Provided input on error handling and recovery experiences</span>
+                </li>
+                <li className="mb-2 flex flex-wrap items-baseline">
+                  <span className="w-full">Helped prioritize technical features based on user impact</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -1385,7 +1407,7 @@ export default function CaseStudy() {
             Results & Impact
           </CaseStudyHeader>
           
-          <div className="prose prose-lg max-w-none bg-white p-8 rounded-lg shadow-sm">
+          <div className="prose prose-lg max-w-none bg-gradient-to-r from-white to-pink-50 p-8 rounded-lg shadow-md">
             <p>
               The LessonLoom platform transformed content creation at NewGlobe:
             </p>
@@ -1471,7 +1493,7 @@ export default function CaseStudy() {
             Technical Implementation Highlights
           </CaseStudyHeader>
           
-          <div className="bg-white p-8 rounded-lg shadow-sm">
+          <div className="bg-gradient-to-r from-white to-indigo-50 p-8 rounded-lg shadow-md">
             <div className="prose prose-lg max-w-none">
               <p className="mb-6">
                 While my primary focus was on the user experience, I worked closely with our engineering team to ensure the design vision was properly implemented:
@@ -1484,24 +1506,24 @@ export default function CaseStudy() {
               </p>
               
               <ul className="space-y-2 pl-0 list-none mb-8">
-                <li className="mb-3 flex items-baseline">
-                  <span className="font-semibold mr-2 text-purple-700">Frontend:</span>
+                <li className="mb-3 flex flex-wrap items-baseline">
+                  <span className="font-semibold mr-2 text-purple-700 whitespace-nowrap mb-1">Frontend:</span>
                   <span>Vue.js web application within the NewGlobe Portal</span>
                 </li>
-                <li className="mb-3 flex items-baseline">
-                  <span className="font-semibold mr-2 text-purple-700">Backend API:</span>
+                <li className="mb-3 flex flex-wrap items-baseline">
+                  <span className="font-semibold mr-2 text-purple-700 whitespace-nowrap mb-1">Backend API:</span>
                   <span>.NET Core API managing templates, spreadsheets, and generation jobs</span>
                 </li>
-                <li className="mb-3 flex items-baseline">
-                  <span className="font-semibold mr-2 text-purple-700">Generation Service:</span>
+                <li className="mb-3 flex flex-wrap items-baseline">
+                  <span className="font-semibold mr-2 text-purple-700 whitespace-nowrap mb-1">Generation Service:</span>
                   <span>Python API interfacing with Azure OpenAI</span>
                 </li>
-                <li className="mb-3 flex items-baseline">
-                  <span className="font-semibold mr-2 text-purple-700">Storage:</span>
+                <li className="mb-3 flex flex-wrap items-baseline">
+                  <span className="font-semibold mr-2 text-purple-700 whitespace-nowrap mb-1">Storage:</span>
                   <span>AWS S3 for templates, spreadsheets, and generated lessons</span>
                 </li>
-                <li className="mb-3 flex items-baseline">
-                  <span className="font-semibold mr-2 text-purple-700">Integration:</span>
+                <li className="mb-3 flex flex-wrap items-baseline">
+                  <span className="font-semibold mr-2 text-purple-700 whitespace-nowrap mb-1">Integration:</span>
                   <span>Azure AI Translation Service for multi-language support</span>
                 </li>
               </ul>
@@ -1513,16 +1535,16 @@ export default function CaseStudy() {
               </p>
               
               <ul className="space-y-2 pl-0 list-none mb-6">
-                <li className="mb-3 flex items-baseline">
-                  <span className="font-semibold mr-2 text-purple-700">Mail Merge Phase:</span>
+                <li className="mb-3 flex flex-wrap items-baseline">
+                  <span className="font-semibold mr-2 text-purple-700 whitespace-nowrap mb-1">Mail Merge Phase:</span>
                   <span>Integrates content from spreadsheets into templates</span>
                 </li>
-                <li className="mb-3 flex items-baseline">
-                  <span className="font-semibold mr-2 text-purple-700">Variable Generation Phase:</span>
+                <li className="mb-3 flex flex-wrap items-baseline">
+                  <span className="font-semibold mr-2 text-purple-700 whitespace-nowrap mb-1">Variable Generation Phase:</span>
                   <span>Creates and tags reusable content elements</span>
                 </li>
-                <li className="mb-3 flex items-baseline">
-                  <span className="font-semibold mr-2 text-purple-700">One-off Generation Phase:</span>
+                <li className="mb-3 flex flex-wrap items-baseline">
+                  <span className="font-semibold mr-2 text-purple-700 whitespace-nowrap mb-1">One-off Generation Phase:</span>
                   <span>Generates context-specific content based on highlighted prompts</span>
                 </li>
               </ul>
@@ -1541,7 +1563,7 @@ export default function CaseStudy() {
           </CaseStudyHeader>
           
           <div className="space-y-8">
-            <div className="bg-white p-8 rounded-lg shadow-sm">
+            <div className="bg-gradient-to-r from-white to-purple-50 p-8 rounded-lg shadow-md">
               <h3 className="text-2xl font-semibold mb-5 text-gray-800">Design Challenges</h3>
               
               <div className="prose prose-lg max-w-none">
@@ -1559,7 +1581,7 @@ export default function CaseStudy() {
               </div>
             </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-sm">
+            <div className="bg-gradient-to-r from-white to-indigo-50 p-8 rounded-lg shadow-md">
               <h3 className="text-2xl font-semibold mb-5 text-gray-800">Key Takeaways</h3>
               
               <div className="prose prose-lg max-w-none">
@@ -1588,7 +1610,7 @@ export default function CaseStudy() {
             Conclusion
           </CaseStudyHeader>
           
-          <div className="bg-white p-8 rounded-lg shadow-sm">
+          <div className="bg-gradient-to-r from-white to-pink-50 p-8 rounded-lg shadow-md">
             <div className="prose prose-lg max-w-none">
               <p className="text-xl text-gray-800 mb-6 leading-relaxed">
                 LessonLoom represents the power of thoughtful design to transform complex workflows. By deeply understanding users' needs and creating intuitive interfaces for AI interaction, we were able to dramatically improve efficiency while enhancing quality.
@@ -1609,7 +1631,7 @@ export default function CaseStudy() {
         
         {/* Bottom Navigation */}
         <CaseStudyFooter />
-      </div>
+    </div>
     </main>
   );
-} 
+}
