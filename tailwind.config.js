@@ -27,6 +27,21 @@ module.exports = {
         'geist-sans': ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
         'geist-mono': ['var(--font-geist-mono)', 'monospace'],
       },
+      keyframes: {
+        blink: {
+          '0%, 100%': { opacity: 1 },
+          '50%': { opacity: 0 },
+        },
+        gradientFlow: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        }
+      },
+      animation: {
+        blink: 'blink 0.7s step-end infinite',
+        gradient: 'gradientFlow 6s ease infinite',
+      },
       typography: {
         DEFAULT: {
           css: {

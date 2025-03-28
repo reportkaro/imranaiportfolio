@@ -50,12 +50,7 @@ const HeroHeading = ({ isVisible, aiTextOptions }: HeroHeadingProps) => {
         <span className="relative inline-block" style={{ minWidth: "260px" }}>
           <span 
             ref={gradientTextRef}
-            className="gradient-text animate-gradient"
-            style={{ 
-              backgroundSize: '300% 300%',
-              display: 'inline-block',
-              width: 'auto'
-            }}
+            className="bg-gradient-to-r from-accent via-tertiary to-accent animate-gradient bg-[length:300%_300%] bg-clip-text text-transparent inline-block"
           >
             {currentText}
             {typing && (
