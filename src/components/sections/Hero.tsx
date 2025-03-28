@@ -7,6 +7,7 @@ import HeroHeading from './hero/HeroHeading';
 import HeroChatSection from './hero/HeroChatSection';
 import HeroButtons from './hero/HeroButtons';
 import HeroContactInfo from './hero/HeroContactInfo';
+import HeroBackground from './hero/HeroBackground';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -70,6 +71,9 @@ const Hero = () => {
       className="pt-40 pb-24 md:pt-48 md:pb-32 overflow-hidden relative bg-background"
       style={{ position: 'relative', overflowX: 'hidden' }}
     >
+      {/* Add the wavy background */}
+      <HeroBackground />
+      
       <div className="container mx-auto px-6 md:px-8 relative z-10">
         <div className="max-w-4xl">
           {/* Always show the hero content */}
