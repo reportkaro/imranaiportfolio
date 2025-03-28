@@ -145,8 +145,8 @@ const Projects = () => {
                   </span>
                   
                   <div className="relative">
-                    <span className="inline-block text-accent mb-2 text-sm font-medium">{project.tagline}</span>
-                    <h3 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-accent transition-colors">{project.title}</h3>
+                    <span className="inline-block mb-2 text-sm font-medium transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-accent group-hover:via-tertiary group-hover:to-accent group-hover:bg-[length:200%_auto] group-hover:bg-clip-text group-hover:text-transparent">{project.tagline}</span>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-accent group-hover:via-tertiary group-hover:to-accent group-hover:bg-[length:200%_auto] group-hover:bg-clip-text group-hover:text-transparent">{project.title}</h3>
                     <p className="text-muted mb-8 leading-relaxed">{project.description}</p>
                     
                     <div className="inline-flex items-center font-medium text-accent group-hover:text-accent/80 transition-colors">

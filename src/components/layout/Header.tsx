@@ -6,7 +6,6 @@ import { NavItem } from '../../types';
 
 const navItems: NavItem[] = [
   { label: 'Work', href: '#work' },
-  { label: 'Services', href: '#services' },
   { label: 'About', href: '#about' }
 ];
 
@@ -41,7 +40,7 @@ const Header = () => {
       <div className="container mx-auto px-6 md:px-8 flex justify-between items-center">
         <Link 
           href="/" 
-          className="text-xl font-bold tracking-tight hover:text-accent transition-colors"
+          className="text-xl font-bold tracking-tight transition-all duration-300 hover:bg-gradient-to-r hover:from-accent hover:via-tertiary hover:to-accent hover:bg-[length:200%_auto] hover:bg-clip-text hover:text-transparent"
         >
           <span className="gradient-text">Imran Mohammed</span>
         </Link>
@@ -76,7 +75,7 @@ const Header = () => {
               <li key={item.href}>
                 <Link 
                   href={item.href} 
-                  className="link-effect text-foreground hover:text-accent transition-colors relative py-2"
+                  className="link-effect text-foreground transition-all duration-300 hover:bg-gradient-to-r hover:from-accent hover:via-tertiary hover:to-accent hover:bg-[length:200%_auto] hover:bg-clip-text hover:text-transparent relative py-2"
                 >
                   {item.label}
                 </Link>
@@ -97,7 +96,7 @@ const Header = () => {
                 <li key={item.href}>
                   <Link 
                     href={item.href} 
-                    className="block py-3 text-foreground hover:text-accent transition-colors"
+                    className="block py-3 text-foreground transition-all duration-300 hover:bg-gradient-to-r hover:from-accent hover:via-tertiary hover:to-accent hover:bg-[length:200%_auto] hover:bg-clip-text hover:text-transparent"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.label}

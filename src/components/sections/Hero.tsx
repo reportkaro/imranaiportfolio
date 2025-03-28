@@ -47,7 +47,7 @@ const Hero = () => {
   }, [isChatOpen]);
   
   // Direct toggle function
-  const toggleChat = useCallback((e: React.MouseEvent) => {
+  const toggleChat = useCallback((e?: React.MouseEvent) => {
     if (e) {
       e.preventDefault();
       e.stopPropagation();
@@ -59,10 +59,10 @@ const Hero = () => {
   
   // Text options for the animated heading
   const aiTextOptions = [
+    "AI-enhanced",
     "brilliantly-biased",
     "beautifully-balanced",
-    "future-fluent",
-    "AI-enhanced"
+    "future-fluent"
   ];
 
   return (

@@ -86,12 +86,12 @@ const HeroHeading = ({ isVisible, aiTextOptions }: HeroHeadingProps) => {
         ref={elementRef}
       >
         <h1 
-          className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-tight tracking-tight transition-all duration-700 ${
+          className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-relaxed tracking-tight transition-all duration-700 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
           }`}
         >
           <span className="inline">Creating{" "}</span>
-          <span className="relative inline-block" style={{ minWidth: "260px" }}>
+          <span className="relative inline-block" style={{ minWidth: "260px", minHeight: "70px", paddingBottom: "10px" }}>
             <span 
               ref={gradientTextRef}
               style={{ 
@@ -102,7 +102,9 @@ const HeroHeading = ({ isVisible, aiTextOptions }: HeroHeadingProps) => {
                 color: 'transparent',
                 display: 'inline-block',
                 position: 'relative',
-                animation: 'gradientFlow 6s ease infinite'
+                animation: 'gradientFlow 6s ease infinite',
+                lineHeight: '1.2',
+                paddingBottom: '4px'
               }}
             >
               {currentText}
