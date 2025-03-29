@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import CaseStudyHeader from '@/components/CaseStudyHeader';
 import CaseStudyNav from '@/components/case-studies/CaseStudyNav';
 import CaseStudyFooter from '@/components/case-studies/CaseStudyFooter';
+import GenerationWorkflow from '@/components/GenerationWorkflow';
 
 export default function CaseStudy() {
   return (
@@ -236,50 +237,65 @@ export default function CaseStudy() {
                 Key Insights
               </CaseStudyHeader>
               
-              <div className="bg-gradient-to-r from-white to-indigo-50/70 p-8 rounded-lg shadow-md">
-                <div className="prose prose-lg max-w-none">
-                  <p>
+              <div className="bg-gradient-to-r from-white to-indigo-50/70 p-4 md:p-6 rounded-lg shadow-sm">
+                <p className="text-base md:text-lg text-gray-700 mb-4">
                     Our research revealed critical insights that shaped our design approach:
                   </p>
                   
-                  <div className="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-lg mt-6">
-                    <ol className="space-y-4 pl-0 list-none">
-                      <li className="flex items-start p-4 bg-white rounded-lg shadow-sm">
-                        <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-purple-100 text-purple-700 text-lg font-bold shrink-0">1</span>
-                        <div>
-                          <strong className="text-purple-700">Creators valued pedagogical decisions, not formatting:</strong>
-                          <p className="mt-1 text-gray-700 italic">&quot;I spend 70% of my time making things look right rather than thinking about how students will learn.&quot;</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                  <div className="bg-white rounded-lg border border-purple-100 overflow-hidden shadow-sm">
+                    <div className="bg-purple-50 px-3 py-2 border-b border-purple-100 flex items-center">
+                      <span className="flex justify-center items-center w-6 h-6 rounded-full bg-purple-100 text-purple-700 font-bold text-sm">1</span>
+                      <h4 className="ml-2 text-sm font-semibold text-purple-700">Pedagogical Focus</h4>
                         </div>
-                      </li>
-                      <li className="flex items-start p-4 bg-white rounded-lg shadow-sm">
-                        <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-indigo-100 text-indigo-700 text-lg font-bold shrink-0">2</span>
-                        <div>
-                          <strong className="text-indigo-700">Templates were mental models, not just documents:</strong>
-                          <p className="mt-1 text-gray-700 italic">&quot;We already have mental templates we follow, but they&apos;re not captured anywhere.&quot;</p>
+                    <div className="p-3">
+                      <p className="text-sm text-gray-600 mb-2">Creators valued pedagogical decisions, not formatting</p>
+                      <p className="text-xs text-gray-500 italic border-l-2 border-purple-200 pl-2">"I spend 70% of my time making things look right rather than thinking about how students will learn."</p>
                         </div>
-                      </li>
-                      <li className="flex items-start p-4 bg-white rounded-lg shadow-sm">
-                        <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-pink-100 text-pink-700 text-lg font-bold shrink-0">3</span>
-                        <div>
-                          <strong className="text-pink-700">Content needs varied by subject:</strong>
-                          <p className="mt-1 text-gray-700 italic">&quot;Math lessons follow very predictable patterns, while reading comprehension needs more flexibility.&quot;</p>
                         </div>
-                      </li>
-                      <li className="flex items-start p-4 bg-white rounded-lg shadow-sm">
-                        <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-purple-100 text-purple-700 text-lg font-bold shrink-0">4</span>
-                        <div>
-                          <strong className="text-purple-700">Visual clarity was essential:</strong>
-                          <p className="mt-1 text-gray-700 italic">&quot;I need to see exactly how the final lesson will appear to teachers.&quot;</p>
+                  
+                  <div className="bg-white rounded-lg border border-indigo-100 overflow-hidden shadow-sm">
+                    <div className="bg-indigo-50 px-3 py-2 border-b border-indigo-100 flex items-center">
+                      <span className="flex justify-center items-center w-6 h-6 rounded-full bg-indigo-100 text-indigo-700 font-bold text-sm">2</span>
+                      <h4 className="ml-2 text-sm font-semibold text-indigo-700">Mental Templates</h4>
                         </div>
-                      </li>
-                      <li className="flex items-start p-4 bg-white rounded-lg shadow-sm">
-                        <span className="inline-flex justify-center items-center w-8 h-8 mr-4 rounded-full bg-indigo-100 text-indigo-700 text-lg font-bold shrink-0">5</span>
-                        <div>
-                          <strong className="text-indigo-700">Trust in automation was fragile:</strong>
-                          <p className="mt-1 text-gray-700 italic">&quot;I&apos;d use automation if I could verify and adjust the output easily.&quot;</p>
+                    <div className="p-3">
+                      <p className="text-sm text-gray-600 mb-2">Templates were mental models, not just documents</p>
+                      <p className="text-xs text-gray-500 italic border-l-2 border-indigo-200 pl-2">"We already have mental templates we follow, but they're not captured anywhere."</p>
                         </div>
-                      </li>
-                    </ol>
+                  </div>
+                  
+                  <div className="bg-white rounded-lg border border-pink-100 overflow-hidden shadow-sm">
+                    <div className="bg-pink-50 px-3 py-2 border-b border-pink-100 flex items-center">
+                      <span className="flex justify-center items-center w-6 h-6 rounded-full bg-pink-100 text-pink-700 font-bold text-sm">3</span>
+                      <h4 className="ml-2 text-sm font-semibold text-pink-700">Subject Variations</h4>
+                    </div>
+                    <div className="p-3">
+                      <p className="text-sm text-gray-600 mb-2">Content needs varied by subject</p>
+                      <p className="text-xs text-gray-500 italic border-l-2 border-pink-200 pl-2">"Math lessons follow predictable patterns, while reading comprehension needs more flexibility."</p>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white rounded-lg border border-purple-100 overflow-hidden shadow-sm">
+                    <div className="bg-purple-50 px-3 py-2 border-b border-purple-100 flex items-center">
+                      <span className="flex justify-center items-center w-6 h-6 rounded-full bg-purple-100 text-purple-700 font-bold text-sm">4</span>
+                      <h4 className="ml-2 text-sm font-semibold text-purple-700">Visual Clarity</h4>
+                    </div>
+                    <div className="p-3">
+                      <p className="text-sm text-gray-600 mb-2">Visual clarity was essential</p>
+                      <p className="text-xs text-gray-500 italic border-l-2 border-purple-200 pl-2">"I need to see exactly how the final lesson will appear to teachers."</p>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white rounded-lg border border-indigo-100 overflow-hidden shadow-sm">
+                    <div className="bg-indigo-50 px-3 py-2 border-b border-indigo-100 flex items-center">
+                      <span className="flex justify-center items-center w-6 h-6 rounded-full bg-indigo-100 text-indigo-700 font-bold text-sm">5</span>
+                      <h4 className="ml-2 text-sm font-semibold text-indigo-700">Trust in Automation</h4>
+                    </div>
+                    <div className="p-3">
+                      <p className="text-sm text-gray-600 mb-2">Trust in automation was fragile</p>
+                      <p className="text-xs text-gray-500 italic border-l-2 border-indigo-200 pl-2">"I'd use automation if I could verify and adjust the output easily."</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -292,10 +308,91 @@ export default function CaseStudy() {
               
               <div className="prose prose-lg max-w-none">
                 <p>
-                  During the design process, I explored several conceptual approaches:
+                  During the design process, I explored several conceptual approaches. Each approach represented a different philosophy about how to structure the generation system, balancing control, flexibility, and ease of use for curriculum specialists.
                 </p>
                 
+                <div className="bg-indigo-50 p-6 rounded-lg border-l-4 border-indigo-500 mb-8">
+                  <h4 className="text-lg font-medium text-indigo-800 mb-2">Design Exploration Methodology</h4>
+                  <p className="text-gray-700 mb-3">
+                    My exploration was guided by several key considerations identified during the research phase:
+                  </p>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <span className="inline-flex justify-center items-center w-5 h-5 mr-2 mt-0.5 rounded-full bg-indigo-100 text-indigo-700 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </span>
+                      <span><strong className="text-indigo-700">Balance of control and automation</strong>: Finding the right mix of automated generation while preserving educator control over pedagogical content</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="inline-flex justify-center items-center w-5 h-5 mr-2 mt-0.5 rounded-full bg-indigo-100 text-indigo-700 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </span>
+                      <span><strong className="text-indigo-700">Scalability</strong>: Ensuring the system could accommodate growing content needs across multiple subjects and regions</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="inline-flex justify-center items-center w-5 h-5 mr-2 mt-0.5 rounded-full bg-indigo-100 text-indigo-700 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </span>
+                      <span><strong className="text-indigo-700">Familiar mental models</strong>: Using interfaces and workflows that matched how curriculum specialists already thought about content creation</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="inline-flex justify-center items-center w-5 h-5 mr-2 mt-0.5 rounded-full bg-indigo-100 text-indigo-700 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </span>
+                      <span><strong className="text-indigo-700">Transparency</strong>: Creating a system where users always understood the relationship between inputs and outputs</span>
+                    </li>
+                  </ul>
+                </div>
+                
                 {/* Concept 1: Template-Driven Generation */}
+                <div className="mb-4">
+                  <h4 className="text-xl font-semibold text-gray-800">Concept 1: Template-Driven Generation</h4>
+                  <p className="mb-4">
+                    In this approach, I explored prioritizing template structure as the foundation of the system. The core idea was to create highly structured templates with specialized syntax that would serve as the "blueprint" for all generated content.
+                  </p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                    <div className="bg-white p-5 rounded-lg border border-gray-200 shadow-sm">
+                      <h5 className="font-medium text-indigo-700 mb-2">Key Characteristics</h5>
+                      <ul className="list-disc pl-5 space-y-1 text-gray-700">
+                        <li>Templates designed by instructional designers with embedded automation tags</li>
+                        <li>Content parameters provided separately and mapped to template placeholders</li>
+                        <li>Strong emphasis on consistent output format across all generated materials</li>
+                        <li>Validation of inputs against template requirements</li>
+                      </ul>
+                    </div>
+                    <div className="bg-white p-5 rounded-lg border border-gray-200 shadow-sm">
+                      <h5 className="font-medium text-indigo-700 mb-2">Strategic Rationale</h5>
+                      <ul className="list-disc pl-5 space-y-1 text-gray-700">
+                        <li>Ensures pedagogical best practices are encoded in templates</li>
+                        <li>Provides predictable output structure for review and quality control</li>
+                        <li>Allows content specialists to focus on subject matter rather than formatting</li>
+                        <li>Creates organization-wide consistency in teaching materials</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-4">
+                    <div className="flex">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-yellow-600 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                      </svg>
+                      <div>
+                        <p className="text-sm text-yellow-800 font-medium">Design Consideration</p>
+                        <p className="text-sm text-yellow-700">User testing revealed template creation was challenging for many curriculum specialists. This approach would require specialized training or dedicated template designers.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
                 <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-sm opacity-90">
                   <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex flex-wrap items-center justify-between gap-2">
                     <div className="flex flex-wrap items-center gap-1">
@@ -351,6 +448,46 @@ export default function CaseStudy() {
                 </div>
                 
                 {/* Concept 2: Content-First Approach */}
+                <div className="mb-4">
+                  <h4 className="text-xl font-semibold text-gray-800">Concept 2: Content-First Approach</h4>
+                  <p className="mb-4">
+                    For my second exploration, I inverted the paradigm to prioritize content organization over template structure. This approach treated content as the primary asset, with formatting applied later in the process.
+                  </p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                    <div className="bg-white p-5 rounded-lg border border-gray-200 shadow-sm">
+                      <h5 className="font-medium text-indigo-700 mb-2">Key Characteristics</h5>
+                      <ul className="list-disc pl-5 space-y-1 text-gray-700">
+                        <li>Content parameters organized in spreadsheets with standard columns</li>
+                        <li>Format selection happens after content planning</li>
+                        <li>Content can be filtered, sorted, and batch processed</li>
+                        <li>Uses familiar spreadsheet interface for planning</li>
+                      </ul>
+                    </div>
+                    <div className="bg-white p-5 rounded-lg border border-gray-200 shadow-sm">
+                      <h5 className="font-medium text-indigo-700 mb-2">Strategic Rationale</h5>
+                      <ul className="list-disc pl-5 space-y-1 text-gray-700">
+                        <li>Aligns with how curriculum specialists naturally organize content</li>
+                        <li>Emphasizes pedagogical content over presentation format</li>
+                        <li>Easier for teams to collaborate on content creation</li>
+                        <li>Simplifies the process of creating multiple variations of similar lessons</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+                    <div className="flex">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <div>
+                        <p className="text-sm text-blue-800 font-medium">User Insight</p>
+                        <p className="text-sm text-blue-700">During testing, curriculum specialists responded positively to the spreadsheet approach, noting that it mirrored their existing content planning workflows. However, some expressed concern about the lack of preview capabilities during the planning phase.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
                 <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-sm opacity-90">
                   <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex flex-wrap items-center justify-between gap-2">
                     <div className="flex flex-wrap items-center gap-1">
@@ -410,6 +547,46 @@ export default function CaseStudy() {
                 </div>
                 
                 {/* Concept 3: Hybrid Approach */}
+                <div className="mb-4">
+                  <h4 className="text-xl font-semibold text-gray-800">Concept 3: Hybrid Approach</h4>
+                  <p className="mb-4">
+                    After testing the previous concepts with users, I developed a hybrid approach that combined the strengths of both paradigms. This synthesis emerged from direct user feedback and represented a more balanced solution.
+                  </p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                    <div className="bg-white p-5 rounded-lg border border-gray-200 shadow-sm">
+                      <h5 className="font-medium text-indigo-700 mb-2">Key Characteristics</h5>
+                      <ul className="list-disc pl-5 space-y-1 text-gray-700">
+                        <li>Separate but interconnected content and template systems</li>
+                        <li>Intelligent matching between content parameters and suitable templates</li>
+                        <li>Live preview capability during content planning</li>
+                        <li>Multi-stage workflow with validation at each step</li>
+                      </ul>
+                    </div>
+                    <div className="bg-white p-5 rounded-lg border border-gray-200 shadow-sm">
+                      <h5 className="font-medium text-indigo-700 mb-2">Strategic Rationale</h5>
+                      <ul className="list-disc pl-5 space-y-1 text-gray-700">
+                        <li>Splits responsibilities between template designers and content creators</li>
+                        <li>Balances standardization needs with content flexibility</li>
+                        <li>Provides visibility into the generation process</li>
+                        <li>Creates clear separation of concerns while maintaining integration</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-green-50 border-l-4 border-green-500 p-4 mb-4">
+                    <div className="flex">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-600 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <div>
+                        <p className="text-sm text-green-800 font-medium">Key Decision Point</p>
+                        <p className="text-sm text-green-700">The hybrid approach was unanimously preferred in user testing. Curriculum specialists appreciated maintaining their content-focused workflow while instructional designers valued the template system's ability to enforce pedagogical best practices.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
                 <div className="my-8 border-2 border-purple-500 rounded-lg overflow-hidden shadow-md bg-gradient-to-r from-white to-purple-50">
                   <div className="bg-purple-100 px-4 py-3 border-b border-purple-200 flex flex-wrap items-center justify-between gap-2">
                     <div className="flex flex-wrap items-center gap-1">
@@ -508,6 +685,108 @@ export default function CaseStudy() {
                 <p className="mt-4 mb-6">
                   This architecture separated content planning from content generation, allowing specialists to focus on curriculum decisions while automation handled implementation.
                 </p>
+
+                {/* Information Architecture Flow Diagram */}
+                <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-md">
+                  <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex items-center">
+                    <div className="w-3 h-3 rounded-full bg-red-400 mr-2"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-400 mr-2"></div>
+                    <span className="text-sm text-gray-500 ml-2">System Workflow Architecture</span>
+                  </div>
+                  <div className="p-6 bg-white">
+                    <div className="flex flex-col items-center">
+                      {/* Flow diagram - responsive and simple */}
+                      <div className="w-full max-w-4xl">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0 mb-12 relative">
+                          {/* Content Spreadsheet */}
+                          <div className="flex flex-col items-center text-center z-10">
+                            <div className="w-20 h-20 rounded-lg bg-purple-100 border-2 border-purple-300 flex items-center justify-center mb-3">
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-purple-600" viewBox="0 0 20 20" fill="currentColor">
+                                <path fillRule="evenodd" d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z" clipRule="evenodd" />
+                              </svg>
+                            </div>
+                            <h4 className="font-medium text-purple-700">Content Spreadsheet</h4>
+                            <p className="text-sm text-gray-600 mt-1 px-2">Curriculum specialists define lesson parameters</p>
+                          </div>
+                          
+                          {/* Template Library */}
+                          <div className="flex flex-col items-center text-center z-10">
+                            <div className="w-20 h-20 rounded-lg bg-indigo-100 border-2 border-indigo-300 flex items-center justify-center mb-3">
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-indigo-600" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
+                              </svg>
+                            </div>
+                            <h4 className="font-medium text-indigo-700">Template Library</h4>
+                            <p className="text-sm text-gray-600 mt-1 px-2">Instructional designers create templates with syntax</p>
+                          </div>
+                          
+                          {/* Generation Interface */}
+                          <div className="flex flex-col items-center text-center z-10">
+                            <div className="w-20 h-20 rounded-lg bg-pink-100 border-2 border-pink-300 flex items-center justify-center mb-3">
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-pink-600" viewBox="0 0 20 20" fill="currentColor">
+                                <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
+                              </svg>
+                            </div>
+                            <h4 className="font-medium text-pink-700">Generation Interface</h4>
+                            <p className="text-sm text-gray-600 mt-1 px-2">Users manage process and review generated lessons</p>
+                          </div>
+                          
+                          {/* Connection arrows - only visible on larger screens */}
+                          <div className="absolute top-10 left-0 right-0 h-0.5 bg-gray-200 hidden md:block"></div>
+                          <div className="absolute top-10 left-1/3 w-0.5 h-4 bg-gray-200 hidden md:block"></div>
+                          <div className="absolute top-10 right-1/3 w-0.5 h-4 bg-gray-200 hidden md:block"></div>
+                        </div>
+                        
+                        {/* Flow diagram - Second row with process arrow */}
+                        <div className="flex flex-col items-center mb-8">
+                          <svg className="w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                          </svg>
+                        </div>
+                        
+                        {/* Flow diagram - Final output */}
+                        <div className="border-2 border-green-300 rounded-lg p-4 bg-green-50 max-w-md mx-auto">
+                          <div className="flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-green-600 mr-3" viewBox="0 0 20 20" fill="currentColor">
+                              <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+                            </svg>
+                            <div>
+                              <h4 className="font-medium text-green-700 text-lg">Generated Lesson</h4>
+                              <p className="text-sm text-gray-600">Complete, formatted teaching materials</p>
+                            </div>
+                          </div>
+                          
+                          <div className="text-xs text-gray-500 border-t border-green-200 pt-2 mt-2">
+                            <div className="grid grid-cols-2 gap-2">
+                              <div className="flex items-center">
+                                <span className="w-2 h-2 bg-purple-500 rounded-full mr-1"></span>
+                                <span>Content data merged</span>
+                              </div>
+                              <div className="flex items-center">
+                                <span className="w-2 h-2 bg-indigo-500 rounded-full mr-1"></span>
+                                <span>Format applied</span>
+                              </div>
+                              <div className="flex items-center">
+                                <span className="w-2 h-2 bg-pink-500 rounded-full mr-1"></span>
+                                <span>User reviewed</span>
+                              </div>
+                              <div className="flex items-center">
+                                <span className="w-2 h-2 bg-green-500 rounded-full mr-1"></span>
+                                <span>Ready for use</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Flow description */}
+                      <div className="mt-6 pt-6 border-t border-gray-200 text-sm text-gray-600 max-w-2xl text-center">
+                        <p>This workflow combines curriculum content from the spreadsheet with formatting from templates. The generation interface orchestrates the process, allowing users to review and finalize lessons before they're delivered to teachers.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 {/* Content Spreadsheet Wireframe */}
                 <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-md">
@@ -715,23 +994,95 @@ export default function CaseStudy() {
                       <span className="text-sm text-gray-500 ml-2">Template Editor</span>
                     </div>
                     <div className="p-6 bg-white">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {/* Left side: Template with placeholders */}
+                        <div className="border border-gray-200 rounded-lg p-4">
+                          <div className="flex items-center justify-between mb-3">
+                            <div className="text-sm font-medium text-gray-700">Template with Placeholders</div>
+                            <div className="px-2 py-1 bg-indigo-100 text-indigo-600 rounded text-xs">Edit Mode</div>
+                          </div>
                       <div className="font-mono text-sm">
-                        <p className="mb-2">{"<Lesson Title>"}</p>
-                        <p className="mb-2">{"Subject: "}<span className="text-red-600">{"{{SUBJECT}}"}</span></p>
-                        <p className="mb-2">{"Grade Level: "}<span className="text-red-600">{"{{GRADE}}"}</span></p>
-                        <p className="mb-2">{"Duration: "}<span className="text-red-600">{"{{DURATION}}"}</span> minutes</p>
-                        <p className="mb-4">{"---"}</p>
-                        <p className="mb-2">{"## Learning Objectives"}</p>
+                            <p className="mb-2"><span className="text-blue-600">{"# "}</span>{"Introduction to "}<span className="text-red-600">{"{{TOPIC}}"}</span></p>
+                            <p className="mb-2"><span className="text-blue-600">{"## "}</span>{"Subject: "}<span className="text-red-600">{"{{SUBJECT}}"}</span></p>
+                            <p className="mb-2"><span className="text-blue-600">{"## "}</span>{"Grade Level: "}<span className="text-red-600">{"{{GRADE}}"}</span></p>
+                            <p className="mb-2"><span className="text-blue-600">{"## "}</span>{"Duration: "}<span className="text-red-600">{"{{DURATION}}"}</span>{" minutes"}</p>
+                            <p className="mb-4 text-gray-400">{"---"}</p>
+                            
+                            <p className="mb-2"><span className="text-blue-600">{"### "}</span>{"Learning Objectives"}</p>
                         <p className="mb-2">{"By the end of this lesson, students will be able to:"}</p>
-                        <p className="mb-2">{" - "}<span className="bg-yellow-200 px-1">{"Generate specific objectives for {{SUBJECT}} appropriate for {{GRADE}}"}</span></p>
-                        <p className="mb-4">{"---"}</p>
-                        <p className="mb-2">{"## Introduction"}</p>
-                        <p className="mb-2">{" "}<span className="bg-yellow-200 px-1">{"Generate an engaging introduction about {{TOPIC}} for {{GRADE}} students"}</span></p>
-                        <p className="mb-2">{"Key Vocabulary: "}<span className="underline">{"{{key_terms}}"}</span></p>
-                        <p className="mb-2">{"---"}</p>
-                        <p className="mb-2">{"## Main Activity"}</p>
-                        <p className="mb-2">{" "}<span className="bg-yellow-200 px-1">{"Generate step-by-step instructions for {{ACTIVITY_TYPE}}"}</span></p>
-                        <p className="mb-2">{"Materials: "}<span className="text-red-600">{"{{MATERIALS}}"}</span></p>
+                            <p className="mb-2">{" - "}<span className="bg-yellow-200 px-1">{"Generate 3 specific learning objectives for {{SUBJECT}} {{TOPIC}} appropriate for {{GRADE}}"}</span></p>
+                            <p className="mb-4 text-gray-400">{"---"}</p>
+                            
+                            <p className="mb-2"><span className="text-blue-600">{"### "}</span>{"Introduction"}</p>
+                            <p className="mb-2"><span className="bg-yellow-200 px-1">{"Generate an engaging introduction about {{TOPIC}} that includes a real-world example relevant for {{GRADE}} students"}</span></p>
+                            <p className="mb-4 text-gray-400">{"---"}</p>
+                            
+                            <p className="mb-2"><span className="text-blue-600">{"### "}</span>{"Main Activity"}</p>
+                            <p className="mb-2">{"Materials needed:"}</p>
+                            <p className="mb-2"><span className="text-red-600">{"{{MATERIALS}}"}</span></p>
+                            <p className="mb-2">{"Instructions:"}</p>
+                            <p className="mb-1"><span className="bg-yellow-200 px-1">{"Generate step-by-step instructions for a hands-on activity about {{TOPIC}}"}</span></p>
+                      </div>
+                    </div>
+                        
+                        {/* Right side: Filled template with real content */}
+                        <div className="border border-gray-200 rounded-lg p-4">
+                          <div className="flex items-center justify-between mb-3">
+                            <div className="text-sm font-medium text-gray-700">Filled Template Preview</div>
+                            <div className="px-2 py-1 bg-green-100 text-green-600 rounded text-xs">Preview Mode</div>
+                          </div>
+                          <div className="font-mono text-sm">
+                            <p className="mb-2"><span className="text-blue-600">{"# "}</span>{"Introduction to Fractions"}</p>
+                            <p className="mb-2"><span className="text-blue-600">{"## "}</span>{"Subject: Mathematics"}</p>
+                            <p className="mb-2"><span className="text-blue-600">{"## "}</span>{"Grade Level: 3rd Grade"}</p>
+                            <p className="mb-2"><span className="text-blue-600">{"## "}</span>{"Duration: 45 minutes"}</p>
+                            <p className="mb-4 text-gray-400">{"---"}</p>
+                            
+                            <p className="mb-2"><span className="text-blue-600">{"### "}</span>{"Learning Objectives"}</p>
+                            <p className="mb-2">{"By the end of this lesson, students will be able to:"}</p>
+                            <p className="mb-2">{" - Identify fractions as parts of a whole"}</p>
+                            <p className="mb-2">{" - Represent fractions using visual models"}</p>
+                            <p className="mb-2">{" - Compare simple fractions (1/2, 1/4, 1/3)"}</p>
+                            <p className="mb-4 text-gray-400">{"---"}</p>
+                            
+                            <p className="mb-2"><span className="text-blue-600">{"### "}</span>{"Introduction"}</p>
+                            <p className="mb-2">{"Imagine sharing a pizza with friends! When we cut a pizza into equal pieces, each piece represents a fraction of the whole pizza. Today we'll explore how fractions help us share things fairly and measure parts of a whole in our everyday lives."}</p>
+                            <p className="mb-4 text-gray-400">{"---"}</p>
+                            
+                            <p className="mb-2"><span className="text-blue-600">{"### "}</span>{"Main Activity"}</p>
+                            <p className="mb-2">{"Materials needed:"}</p>
+                            <p className="mb-2">{"- Circle fraction manipulatives"}</p>
+                            <p className="mb-2">{"- Colored pencils"}</p>
+                            <p className="mb-2">{"- Fraction worksheets"}</p>
+                            <p className="mb-2">{"Instructions:"}</p>
+                            <p className="mb-1">{"1. Distribute fraction circles to each student"}</p>
+                            <p className="mb-1">{"2. Demonstrate how to create a whole using different pieces"}</p>
+                            <p className="mb-1">{"3. Have students explore combining different fractions"}</p>
+                            <p className="mb-1">{"4. Guide students in coloring the worksheet sections"}</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="mt-6 bg-gray-50 p-4 rounded-lg border border-gray-200">
+                        <div className="text-sm font-medium mb-2 text-gray-700">Template System Benefits</div>
+                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                          <li className="flex items-center">
+                            <span className="text-green-500 mr-2">✓</span>
+                            <span>Consistent lesson structure across subjects</span>
+                          </li>
+                          <li className="flex items-center">
+                            <span className="text-green-500 mr-2">✓</span>
+                            <span>Clear visual differentiation of content types</span>
+                          </li>
+                          <li className="flex items-center">
+                            <span className="text-green-500 mr-2">✓</span>
+                            <span>Flexible generation instructions</span>
+                          </li>
+                          <li className="flex items-center">
+                            <span className="text-green-500 mr-2">✓</span>
+                            <span>Predictable output format</span>
+                          </li>
+                        </ul>
                       </div>
                     </div>
                   </div>
@@ -742,22 +1093,18 @@ export default function CaseStudy() {
                       <span>Content from spreadsheets (mail-merge)</span>
                     </li>
                     <li className="flex items-baseline">
-                      <span className="font-semibold mr-2 underline">Underlined text:</span>
-                      <span>Generated content that would be reused (variables)</span>
+                      <span className="font-semibold mr-2 text-blue-600">Blue text:</span>
+                      <span>Markdown formatting elements</span>
                     </li>
                     <li className="flex items-baseline">
                       <span className="font-semibold mr-2 bg-yellow-200 px-1">Yellow highlighting:</span>
-                      <span>One-time content generation</span>
+                      <span>AI-generated content instructions</span>
                     </li>
                     <li className="flex items-baseline">
-                      <span className="font-semibold mr-2">[Brackets]:</span>
-                      <span>Content tagging and retrieval</span>
+                      <span className="font-semibold mr-2 text-gray-400">Gray text:</span>
+                      <span>Section dividers and structural elements</span>
                     </li>
                   </ul>
-                  
-                  <p className="mt-4">
-                    This syntax enabled users to visually scan templates and immediately understand which parts would be automated versus manually defined.
-                  </p>
                 </div>
                 
                 <div>
@@ -767,109 +1114,17 @@ export default function CaseStudy() {
                     I designed a step-by-step workflow that provided transparency and control:
                   </p>
                   
-                  <div className="my-8 border border-gray-200 rounded-lg overflow-hidden shadow-md">
-                    <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex flex-wrap items-center justify-between gap-2">
-                      <div className="flex flex-wrap items-center gap-1">
-                        <div className="flex items-center flex-shrink-0">
-                          <div className="w-3 h-3 rounded-full bg-red-400 mr-1"></div>
-                          <div className="w-3 h-3 rounded-full bg-yellow-400 mr-1"></div>
-                          <div className="w-3 h-3 rounded-full bg-green-400 mr-1"></div>
-                        </div>
-                        <span className="text-sm text-gray-500 ml-1">Generate lessons</span>
-                      </div>
-                      <div className="text-xs text-gray-500">
-                        <button className="bg-transparent border-none p-0">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <div className="mb-4 bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500 flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                           </svg>
-                        </button>
+                    <div>
+                      <p className="text-indigo-800 font-medium">Try it yourself!</p>
+                      <p className="text-sm text-indigo-700">This wireframe is fully interactive. Click on the step numbers or use the navigation buttons to walk through the entire generation workflow.</p>
                       </div>
                     </div>
-                    <div className="p-4 md:p-8 bg-white">
-                      {/* New workflow based on image - responsive version */}
-                      <div className="flex flex-wrap justify-between mb-12 relative">
-                        {/* Progress bar - hidden on mobile, visible on md+ */}
-                        <div className="absolute h-[1px] bg-gray-200 top-5 left-0 right-0 z-0 hidden md:block"></div>
-                        
-                        {/* Step 1: Upload template library - Current */}
-                        <div className="flex flex-col items-center relative z-10 w-1/2 md:w-auto mb-6 md:mb-0">
-                          <div className="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center mb-3">
-                            <span>1</span>
-                          </div>
-                          <span className="text-xs md:text-sm text-center font-medium text-indigo-600">Upload template library</span>
-                        </div>
-                        
-                        {/* Step 2: Upload spreadsheet */}
-                        <div className="flex flex-col items-center relative z-10 w-1/2 md:w-auto mb-6 md:mb-0">
-                          <div className="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center mb-3">
-                            <span>2</span>
-                          </div>
-                          <span className="text-xs md:text-sm text-center text-gray-500">Upload spreadsheet</span>
-                        </div>
-                        
-                        {/* Step 3: Select content */}
-                        <div className="flex flex-col items-center relative z-10 w-1/2 md:w-auto mb-6 md:mb-0">
-                          <div className="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center mb-3">
-                            <span>3</span>
-                          </div>
-                          <span className="text-xs md:text-sm text-center text-gray-500">Select content</span>
-                        </div>
-                        
-                        {/* Step 4: Select lessons */}
-                        <div className="flex flex-col items-center relative z-10 w-1/2 md:w-auto mb-6 md:mb-0">
-                          <div className="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center mb-3">
-                            <span>4</span>
-                          </div>
-                          <span className="text-xs md:text-sm text-center text-gray-500">Select lessons</span>
-                        </div>
-                        
-                        {/* Step 5: Generate lessons */}
-                        <div className="flex flex-col items-center relative z-10 w-1/2 md:w-auto mb-6 md:mb-0">
-                          <div className="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center mb-3">
-                            <span>5</span>
-                          </div>
-                          <span className="text-xs md:text-sm text-center text-gray-500">Generate lessons</span>
-                        </div>
-                        
-                        {/* Step 6: Summary */}
-                        <div className="flex flex-col items-center relative z-10 w-1/2 md:w-auto mb-6 md:mb-0">
-                          <div className="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center mb-3">
-                            <span>6</span>
-                          </div>
-                          <span className="text-xs md:text-sm text-center text-gray-500">Summary</span>
-                        </div>
-                      </div>
-                      
-                      {/* Upload template library content */}
-                      <div className="border border-gray-200 rounded-lg p-4 md:p-8 flex flex-col items-center justify-center">
-                        <div className="text-center mb-6">
-                          <h3 className="text-lg md:text-xl font-medium mb-2">Upload template library</h3>
-                          <p className="text-sm md:text-base text-gray-500">Drag and drop template library here to upload.</p>
-                          <p className="text-sm md:text-base text-gray-500">Template library should be in .docx format.</p>
-                        </div>
-                        
-                        <div className="w-12 h-12 md:w-16 md:h-16 mb-6">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                          </svg>
-                        </div>
-                        
-                        <button className="flex items-center px-4 py-2 bg-white border border-indigo-600 rounded-md text-indigo-600 text-sm md:text-base font-medium">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                          </svg>
-                          Choose file
-                        </button>
-                      </div>
-                      
-                      {/* Footer with proceed button */}
-                      <div className="flex justify-end mt-8">
-                        <button className="px-4 md:px-6 py-2 bg-gray-200 text-gray-600 rounded-md text-sm md:text-base">
-                          Proceed
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                  
+                  <GenerationWorkflow />
                   
                   <ul className="space-y-2 pl-0 list-none">
                     <li className="mb-2 flex flex-wrap items-baseline">
