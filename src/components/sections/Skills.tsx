@@ -87,12 +87,6 @@ const Skills = () => {
               </div>
             ))}
           </div>
-          
-          <div className="text-center">
-            <Button href="#contact" variant="outline">
-              Discuss Your AI Project
-            </Button>
-          </div>
         </div>
       </div>
     </section>

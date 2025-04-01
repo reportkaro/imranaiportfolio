@@ -2,8 +2,7 @@
 
 import React, { useRef, useEffect } from 'react';
 import { Message } from '../../../types/chat';
-import ChatMessage from './ChatMessage';
-import ChatTypingIndicator from './ChatTypingIndicator';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface ChatMessageListProps {
   messages: Message[];
@@ -12,70 +11,58 @@ interface ChatMessageListProps {
 
 const ChatMessageList = ({ messages, isTyping }: ChatMessageListProps) => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const typingRef = useRef<HTMLDivElement>(null);
-  
-  // Enhanced scroll behavior - always scroll to typing indicator or latest message
+  const prevMessagesLengthRef = useRef(0);
+
+  // Auto-scroll to bottom only when new messages are added
   useEffect(() => {
-    // Ensure DOM is fully updated before scrolling
-    requestAnimationFrame(() => {
-      // First, prioritize scrolling to typing indicator when it appears
-      if (isTyping && typingRef.current) {
-        typingRef.current.scrollIntoView({
-          behavior: 'smooth',
-          block: 'end'
-        });
-        return;
-      }
-      
-      // Otherwise, scroll to the latest message or end of container
-      if (messagesEndRef.current) {
-        messagesEndRef.current.scrollIntoView({
-          behavior: 'smooth',
-          block: 'end'
-        });
-      }
-    });
-  }, [messages.length, isTyping]);
-  
+    // Only scroll if new messages were added (not on initial load)
+    if (messages.length > prevMessagesLengthRef.current) {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    // Update the previous messages length reference
+    prevMessagesLengthRef.current = messages.length;
+  }, [messages]);
+
   return (
-    <div 
-      ref={containerRef}
-      className="flex-1 overflow-y-auto px-5 py-5 hide-scrollbar"
-      style={{ height: '100%' }}
-    >
-      {/* Message container with spacing */}
-      <div className="space-y-4 pb-2 min-h-[100%]">
-        {messages.map((message, index) => (
-          <ChatMessage 
-            key={message.id} 
-            message={message}
-            className={index === 0 ? 'mt-1' : ''}
-          />
+    <div className="overflow-y-auto h-full p-4">
+      <AnimatePresence>
+        {messages.map((message) => (
+          <motion.div
+            key={message.id}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className={`mb-4 flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+          >
+            <div
+              className={`max-w-[80%] rounded-lg px-4 py-2 ${
+                message.sender === 'user'
+                  ? 'bg-accent text-white rounded-tr-sm'
+                  : 'bg-white/90 text-gray-800 rounded-tl-sm'
+              }`}
+            >
+              <p className="text-sm">{message.text}</p>
+            </div>
+          </motion.div>
         ))}
         
-        {/* Typing indicator with reference for scrolling */}
         {isTyping && (
-          <div ref={typingRef}>
-            <ChatTypingIndicator />
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex justify-start mb-4"
+          >
+            <div className="bg-white/90 rounded-lg rounded-tl-sm px-4 py-2">
+              <div className="flex space-x-1">
+                <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                <div className="w-2 h-2 rounded-full bg-accent animate-pulse" style={{ animationDelay: '0.2s' }} />
+                <div className="w-2 h-2 rounded-full bg-accent animate-pulse" style={{ animationDelay: '0.4s' }} />
+              </div>
+            </div>
+          </motion.div>
         )}
-        
-        {/* This element is always at the bottom of the message list */}
-        <div ref={messagesEndRef} className="h-2" />
-      </div>
-      
-      {/* Hidden scrollbar styles that preserve scrolling functionality */}
-      <style jsx>{`
-        .hide-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;     /* Firefox */
-        }
-        
-        .hide-scrollbar::-webkit-scrollbar {
-          display: none;  /* Chrome, Safari and Opera */
-        }
-      `}</style>
+        <div ref={messagesEndRef} />
+      </AnimatePresence>
     </div>
   );
 };

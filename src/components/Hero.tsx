@@ -75,20 +75,20 @@ const Hero = () => {
       const secondaryColor = 'rgba(244, 63, 94, ';
       
       // Draw waves at the bottom of the hero section - significantly thicker lines (2px) and very close together (1% apart)
-      drawWave(10, 200, 0.005, 2.0, primaryColor + '0.15)', height * 0.75);
-      drawWave(12, 220, 0.006, 2.0, primaryColor + '0.2)', height * 0.76);
-      drawWave(15, 250, 0.004, 2.0, primaryColor + '0.1)', height * 0.77);
-      drawWave(18, 180, 0.007, 2.0, secondaryColor + '0.1)', height * 0.78);
-      drawWave(14, 190, 0.008, 2.0, secondaryColor + '0.15)', height * 0.79);
-      drawWave(16, 210, 0.005, 2.0, primaryColor + '0.2)', height * 0.80);
-      drawWave(20, 230, 0.006, 2.0, secondaryColor + '0.1)', height * 0.81);
-      drawWave(8, 170, 0.007, 2.0, primaryColor + '0.15)', height * 0.82);
+      drawWave(5, 200, 0.005, 2.0, primaryColor + '0.15)', height * 0.75);
+      drawWave(6, 220, 0.006, 2.0, primaryColor + '0.2)', height * 0.755);
+      drawWave(7, 250, 0.004, 2.0, primaryColor + '0.1)', height * 0.76);
+      drawWave(8, 180, 0.007, 2.0, secondaryColor + '0.1)', height * 0.765);
+      drawWave(6, 190, 0.008, 2.0, secondaryColor + '0.15)', height * 0.77);
+      drawWave(7, 210, 0.005, 2.0, primaryColor + '0.2)', height * 0.775);
+      drawWave(8, 230, 0.006, 2.0, secondaryColor + '0.1)', height * 0.78);
+      drawWave(5, 170, 0.007, 2.0, primaryColor + '0.15)', height * 0.785);
       
       // Add a few more waves to create denser effect
-      drawWave(11, 210, 0.0045, 2.0, primaryColor + '0.18)', height * 0.83);
-      drawWave(13, 190, 0.0055, 2.0, secondaryColor + '0.12)', height * 0.84);
-      drawWave(17, 230, 0.0065, 2.0, primaryColor + '0.16)', height * 0.85);
-      drawWave(9, 200, 0.0075, 2.0, secondaryColor + '0.14)', height * 0.86);
+      drawWave(6, 210, 0.0045, 2.0, primaryColor + '0.18)', height * 0.79);
+      drawWave(7, 190, 0.0055, 2.0, secondaryColor + '0.12)', height * 0.795);
+      drawWave(8, 230, 0.0065, 2.0, primaryColor + '0.16)', height * 0.80);
+      drawWave(5, 200, 0.0075, 2.0, secondaryColor + '0.14)', height * 0.805);
       
       // Add small glowing dots
       for (let i = 0; i < 25; i++) {

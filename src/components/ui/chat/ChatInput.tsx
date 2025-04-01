@@ -1,51 +1,52 @@
 "use client";
 
-import React, { useState, FormEvent } from 'react';
+import React, { useState, KeyboardEvent } from 'react';
 
 interface ChatInputProps {
-  onSendMessage: (text: string) => void;
+  onSendMessage: (message: string) => void;
 }
 
 const ChatInput = ({ onSendMessage }: ChatInputProps) => {
-  const [input, setInput] = useState('');
-  
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    if (input.trim()) {
-      onSendMessage(input);
-      setInput('');
+  const [inputValue, setInputValue] = useState('');
+
+  const handleSubmit = () => {
+    if (inputValue.trim()) {
+      onSendMessage(inputValue);
+      setInputValue('');
     }
   };
-  
+
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSubmit();
+    }
+  };
+
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex gap-3 w-full relative"
-    >
+    <div className="flex items-center gap-2">
       <input
         type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Ask me about Imran..."
-        className="flex-1 p-3.5 pl-4 pr-12 text-sm backdrop-blur-sm bg-gradient-to-r from-white/60 to-white/40 rounded-full border border-white/40 focus:border-indigo-300/70 focus:ring-2 focus:ring-indigo-200/50 text-gray-800 shadow-sm transition-all duration-200"
-        style={{
-          boxShadow: 'inset 0 2px 4px rgba(0, 0, 0, 0.03)'
-        }}
-        autoFocus
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        onKeyDown={handleKeyDown}
+        placeholder="Type a message..."
+        className="flex-1 py-2 px-4 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent/50 bg-white/80"
       />
       <button
-        type="submit"
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-2.5 rounded-full hover:from-indigo-600 hover:to-purple-700 transition-all duration-200 backdrop-blur-sm shadow-md"
-        disabled={!input.trim()}
-        style={{
-          boxShadow: '0 2px 8px rgba(99, 102, 241, 0.25)'
-        }}
+        onClick={handleSubmit}
+        disabled={!inputValue.trim()}
+        className="p-2 rounded-full bg-accent text-white hover:bg-accent/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path 
+            fillRule="evenodd" 
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" 
+            clipRule="evenodd" 
+          />
         </svg>
       </button>
-    </form>
+    </div>
   );
 };
 

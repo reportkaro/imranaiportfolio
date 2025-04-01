@@ -16,7 +16,7 @@ export interface Message {
   /** Content of the message */
   text: string;
   /** Who sent the message */
-  sender: MessageSender;
+  sender: 'user' | 'bot';
   /** When the message was sent */
   timestamp: Date;
   /** Optional metadata for the message */

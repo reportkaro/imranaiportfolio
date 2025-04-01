@@ -73,15 +73,6 @@ const Process = () => {
             </div>
           ))}
         </div>
-        
-        <div className="mt-24 text-center">
-          <Button 
-            href="#contact" 
-            variant="primary"
-          >
-            Let's work together
-          </Button>
-        </div>
       </div>
     </section>
   );

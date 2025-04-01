@@ -56,37 +56,23 @@ export const useChatToggle = (options?: UseChatToggleOptions): ChatToggleState =
       e.stopPropagation();
     }
     
-    // Store current scroll position before any state changes
-    const scrollY = window.scrollY;
-    
     const newChatOpenState = !isChatOpen;
     
     // First update the local state
     setIsChatOpen(newChatOpenState);
     
-    // Apply scroll locking only if enabled
+    // Apply scroll locking if enabled
     if (lockScroll) {
       toggleScrollLock(newChatOpenState);
     }
     
-    // If updating global context is enabled, sync with chat context
+    // Update the global context if needed
     if (updateGlobalContext) {
-      // Schedule this for the next tick to avoid React errors
-      setTimeout(() => {
-        if (newChatOpenState) {
-          openChat();
-        } else {
-          closeChat();
-        }
-        
-        // Restore scroll position after all state changes
-        window.scrollTo(0, scrollY);
-      }, 0);
-    } else {
-      // If not updating context, still restore scroll position
-      setTimeout(() => {
-        window.scrollTo(0, scrollY);
-      }, 0);
+      if (newChatOpenState) {
+        openChat();
+      } else {
+        closeChat();
+      }
     }
   }, [isChatOpen, openChat, closeChat, updateGlobalContext, lockScroll]);
   

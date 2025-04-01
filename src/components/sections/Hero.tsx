@@ -78,16 +78,18 @@ const Hero = () => {
         <div className="max-w-4xl">
           {/* Always show the hero content */}
           <div>
-            <span 
-              className={`inline-block mb-6 text-lg font-medium transition-all duration-700 ease-out ${
-                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-              }`}
-            >
-              AI Experience Designer
-            </span>
+            {!isChatOpen && (
+              <span 
+                className={`inline-block mb-6 text-lg font-medium transition-all duration-700 ease-out ${
+                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                }`}
+              >
+                AI Experience Designer
+              </span>
+            )}
             
             {/* Animation container with fixed height to prevent layout shifts */}
-            <div className="relative h-[270px] md:h-[250px] w-full overflow-hidden">
+            <div className={`relative ${isChatOpen ? 'h-[320px] md:h-[380px]' : 'h-[270px] md:h-[250px]'} w-full overflow-hidden transition-all duration-300`}>
               <AnimatePresence mode="wait">
                 {!isChatOpen ? (
                   <HeroHeading isVisible={isVisible} aiTextOptions={aiTextOptions} />

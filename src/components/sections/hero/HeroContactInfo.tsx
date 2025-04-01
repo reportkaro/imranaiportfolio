@@ -23,7 +23,7 @@ const HeroContactInfo = ({ isVisible }: HeroContactInfoProps) => {
       </div>
       <div className="hover-scale">
         <p className="font-medium mb-1.5">Available For</p>
-        <span className="text-accent">AI Design Consulting & Full-time Opportunities</span>
+        <span>AI Design Consulting & Full-time Opportunities</span>
       </div>
     </div>
   );

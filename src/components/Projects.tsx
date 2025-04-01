@@ -15,11 +15,11 @@ type Project = {
 const featuredProjects: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    tagline: "Creating a seamless shopping experience with modern technology",
-    description: "A comprehensive e-commerce solution that focuses on user experience and conversion optimization.",
+    title: "Lesson Loom",
+    tagline: "Automated Lesson Generation Platform",
+    description: "AI-powered platform that revolutionized how educational materials are created using templating systems and artificial intelligence.",
     image: "/projects/project1.jpg",
-    slug: "ecommerce-platform"
+    slug: "casestudy"
   },
   {
     id: 2,
@@ -52,17 +52,16 @@ const FeaturedWork = () => {
               className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 md:gap-16`}
             >
               <div className="md:w-1/2 relative aspect-video rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 shadow-lg">
-                <div className="absolute inset-0 flex items-center justify-center text-muted">
+                {/* <div className="absolute inset-0 flex items-center justify-center text-muted">
                   Project Image
-                </div>
-                {/* Uncomment when you have actual images */}
-                {/* <Image 
+                </div> */}
+                <Image 
                   src={project.image}
                   alt={project.title}
                   fill
                   style={{ objectFit: 'cover' }}
                   className="rounded-lg"
-                /> */}
+                />
                 
                 {/* Add a decorative element */}
                 <div className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-accent/10 z-0"></div>

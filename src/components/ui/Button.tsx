@@ -30,8 +30,8 @@ const Button = ({
       variantStyle = "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md border-2 border-indigo-500";
       break;
     case 'outline':
-      // Simpler, high-contrast implementation with accent color
-      variantStyle = "bg-transparent border-2 border-accent text-accent hover:bg-accent/10";
+      // Simpler, high-contrast implementation with neutral color
+      variantStyle = "bg-transparent border-2 border-gray-300 text-foreground hover:bg-gray-100";
       break;
     case 'secondary':
       variantStyle = "bg-accent/10 hover:bg-accent/20 text-accent";
@@ -49,30 +49,14 @@ const Button = ({
   // Wrapper for click handler that can prevent scroll jump
   const handleClick = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
     if (preventScroll) {
-      // Store current scroll position
-      const scrollY = window.scrollY;
-      
-      // Prevent default behavior
+      // Simple approach: just prevent default behavior for buttons with preventScroll
       e.preventDefault();
+      e.stopPropagation();
       
-      // If it's a link with href, handle navigation manually
-      if (href) {
-        // Delay navigation slightly to allow scroll position to be maintained
-        setTimeout(() => {
-          window.location.href = href;
-        }, 10);
-      }
-      
-      // For button clicks, call the provided handler
-      if (onClick && !href) {
+      // Call the provided click handler
+      if (onClick) {
         onClick(e as React.MouseEvent<HTMLButtonElement>);
       }
-      
-      // Reset scroll position immediately and after a slight delay
-      window.scrollTo(0, scrollY);
-      requestAnimationFrame(() => {
-        window.scrollTo(0, scrollY);
-      });
     } else if (onClick && !href) {
       // Default behavior for regular buttons
       onClick(e as React.MouseEvent<HTMLButtonElement>);

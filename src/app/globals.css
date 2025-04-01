@@ -178,10 +178,46 @@ p {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, var(--accent), var(--tertiary));
+  background: linear-gradient(135deg, var(--accent), var(--tertiary), var(--accent));
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  display: inline-block;
+  position: relative;
+}
+
+/* Animation for gradient text */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradientFlow 6s ease infinite;
+  background-size: 300% 300%;
+}
+
+/* Typing cursor blink animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 0.7s step-end infinite;
+}
+
+/* Text transition for typing effect */
+.text-transition {
+  transition: opacity 0.3s ease-in-out;
 }
 
 /* Section title underline */
@@ -245,16 +281,6 @@ p {
   animation: scrollDown 1.5s ease-in-out infinite;
 }
 
-/* Add this to your existing CSS file */
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-.animate-blink {
-  animation: blink 1s step-end infinite;
-}
-
 /* Floating animation for AI elements */
 @keyframes float {
   0% { transform: translateY(0px); }
@@ -264,18 +290,6 @@ p {
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
-}
-
-/* Gradient animation for neural effect */
-@keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.animate-gradient {
-  animation: gradientFlow 8s ease infinite;
-  background-size: 300% 300%;
 }
 
 /* AI particles track effect */
@@ -351,24 +365,6 @@ p {
 .ai-border:hover::before {
   background-size: 150% 150%;
   animation-duration: 2s;
-}
-
-/* Add this at the end of the file */
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.animate-gradient {
-  animation: gradient 6s ease infinite;
 }
 
 /* Add animations for the LessonLoom project image */

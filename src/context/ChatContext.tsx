@@ -1,42 +1,95 @@
 "use client";
 
-import React, { createContext, useState, useContext, useCallback } from 'react';
-import { ChatContextType } from '../types/chat';
+import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-// Create the context with a default value
+// Define the message type with proper structure
+export interface ChatMessage {
+  id: string;
+  text: string;
+  timestamp: Date;
+  sender: 'user' | 'system';
+}
+
+// Define the shape of our context with improved typing
+interface ChatContextType {
+  // Message handling
+  messages: ChatMessage[];
+  addMessage: (text: string, sender: 'user' | 'system') => void;
+  clearMessages: () => void;
+  
+  // Chat interface state
+  isOpen: boolean;
+  openChat: () => void;
+  closeChat: () => void;
+}
+
+// Create the context with default values
 const ChatContext = createContext<ChatContextType>({
+  // Message handling defaults
+  messages: [],
+  addMessage: () => {},
+  clearMessages: () => {},
+  
+  // Chat interface state defaults
   isOpen: false,
   openChat: () => {},
   closeChat: () => {},
 });
 
-// Provider component that wraps parts of the app that need the chat context
-export const ChatProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+// Helper function to generate a unique ID
+const generateId = (): string => {
+  return Date.now().toString(36) + Math.random().toString(36).substring(2);
+};
+
+// Provider component that wraps the app
+export const ChatProvider = ({ children }: { children: ReactNode }) => {
+  // Message state
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  
+  // Chat interface state
   const [isOpen, setIsOpen] = useState(false);
 
-  const openChat = useCallback(() => {
+  // Message handlers
+  const addMessage = (text: string, sender: 'user' | 'system') => {
+    const newMessage: ChatMessage = {
+      id: generateId(),
+      text,
+      timestamp: new Date(),
+      sender,
+    };
+    setMessages((prev) => [...prev, newMessage]);
+  };
+
+  const clearMessages = () => {
+    setMessages([]);
+  };
+  
+  // Chat interface handlers
+  const openChat = () => {
     setIsOpen(true);
-  }, []);
-
-  const closeChat = useCallback(() => {
+  };
+  
+  const closeChat = () => {
     setIsOpen(false);
-  }, []);
-
-  // Memoize the context value to prevent unnecessary re-renders
-  const contextValue = React.useMemo(() => ({
-    isOpen,
-    openChat,
-    closeChat,
-  }), [isOpen, openChat, closeChat]);
+  };
 
   return (
-    <ChatContext.Provider value={contextValue}>
+    <ChatContext.Provider 
+      value={{ 
+        messages, 
+        addMessage, 
+        clearMessages,
+        isOpen,
+        openChat,
+        closeChat
+      }}
+    >
       {children}
     </ChatContext.Provider>
   );
 };
 
-// Custom hook to use the chat context
+// Hook for easy context access
 export const useChat = () => useContext(ChatContext);
 
 export default ChatContext; 
