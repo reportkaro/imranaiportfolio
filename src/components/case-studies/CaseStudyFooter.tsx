@@ -4,8 +4,23 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from '@/components/Icons';
+import { usePathname } from 'next/navigation';
 
 export default function CaseStudyFooter() {
+  const pathname = usePathname();
+  
+  // Determine which case study is being viewed
+  const isAIPCaseStudy = pathname?.includes('/aip');
+  
+  // Set the appropriate title and tagline based on the current page
+  const title = isAIPCaseStudy 
+    ? "Automated Instructional Planning" 
+    : "LessonLoom: Automated Lesson Generation Platform";
+    
+  const tagline = isAIPCaseStudy
+    ? "Transforming Educational Scheduling"
+    : "AI-powered educational content creation";
+
   return (
     <motion.div
       className="mt-24 py-10 border-t border-gray-200"
@@ -16,8 +31,8 @@ export default function CaseStudyFooter() {
     >
       <div className="flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="space-y-2">
-          <h3 className="text-lg font-semibold">LessonLoom: Automated Lesson Generation Platform</h3>
-          <p className="text-muted text-sm">AI-powered educational content creation</p>
+          <h3 className="text-lg font-semibold">{title}</h3>
+          <p className="text-muted text-sm">{tagline}</p>
         </div>
         
         <div className="flex gap-4">
