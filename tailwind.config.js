@@ -36,7 +36,7 @@ module.exports = {
           '0%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
           '100%': { backgroundPosition: '0% 50%' },
-        }
+        },
       },
       animation: {
         blink: 'blink 0.7s step-end infinite',
@@ -58,4 +58,4 @@ module.exports = {
     },
   },
   plugins: [require('@tailwindcss/typography')],
-} 
+};

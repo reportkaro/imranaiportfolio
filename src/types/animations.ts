@@ -38,7 +38,7 @@ export interface AnimationProps {
 export const pageTransitionVariants: AnimationVariants = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -20 }
+  exit: { opacity: 0, y: -20 },
 };
 
 /**
@@ -47,7 +47,7 @@ export const pageTransitionVariants: AnimationVariants = {
 export const modalTransitionVariants: AnimationVariants = {
   initial: { opacity: 0, scale: 0.95 },
   animate: { opacity: 1, scale: 1 },
-  exit: { opacity: 0, scale: 0.95 }
+  exit: { opacity: 0, scale: 0.95 },
 };
 
 /**
@@ -55,7 +55,7 @@ export const modalTransitionVariants: AnimationVariants = {
  */
 export const standardTransition: Transition = {
   duration: 0.4,
-  ease: "easeInOut"
+  ease: 'easeInOut',
 };
 
 /**
@@ -63,7 +63,7 @@ export const standardTransition: Transition = {
  */
 export const quickTransition: Transition = {
   duration: 0.2,
-  ease: "easeOut"
+  ease: 'easeOut',
 };
 
 /**
@@ -86,4 +86,4 @@ export interface MousePosition {
   x: number;
   /** Y coordinate relative to the element */
   y: number;
-} 
+}

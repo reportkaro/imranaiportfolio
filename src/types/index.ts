@@ -36,4 +36,4 @@ export interface Inspiration {
 export interface NavItem {
   label: string;
   href: string;
-} 
+}

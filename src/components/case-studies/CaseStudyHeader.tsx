@@ -1,7 +1,7 @@
 'use client';
 
-import { ReactNode, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { ReactNode, useEffect } from 'react';
 
 interface CaseStudyHeaderProps {
   children: ReactNode;
@@ -10,11 +10,11 @@ interface CaseStudyHeaderProps {
   showGradientLine?: boolean;
 }
 
-export default function CaseStudyHeader({ 
-  children, 
+export default function CaseStudyHeader({
+  children,
   level = 'h2',
   className = '',
-  showGradientLine = level === 'h2'
+  showGradientLine = level === 'h2',
 }: CaseStudyHeaderProps) {
   const baseClasses = {
     h1: 'text-4xl md:text-5xl font-bold mb-6',
@@ -23,11 +23,12 @@ export default function CaseStudyHeader({
   };
 
   const HeaderTag = level as keyof JSX.IntrinsicElements;
-  
-  const gradientClass = level === 'h1' 
-    ? 'bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient' 
-    : '';
-  
+
+  const gradientClass =
+    level === 'h1'
+      ? 'bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient'
+      : '';
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -36,12 +37,10 @@ export default function CaseStudyHeader({
       transition={{ duration: 0.5 }}
       className="relative"
     >
-      <HeaderTag className={`${baseClasses[level]} ${gradientClass} ${className}`}>
-        {children}
-      </HeaderTag>
-      
+      <HeaderTag className={`${baseClasses[level]} ${gradientClass} ${className}`}>{children}</HeaderTag>
+
       {showGradientLine && (
-        <motion.div 
+        <motion.div
           className="h-1 w-24 bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 rounded-full mt-2 mb-6"
           initial={{ width: 0, opacity: 0 }}
           whileInView={{ width: 96, opacity: 1 }}
@@ -51,4 +50,4 @@ export default function CaseStudyHeader({
       )}
     </motion.div>
   );
-} 
+}

@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+
 import ChatInterface from '../../ui/ChatInterface';
 
 interface HeroChatSectionProps {
@@ -10,7 +11,7 @@ interface HeroChatSectionProps {
 
 const HeroChatSection = ({ closeChat }: HeroChatSectionProps) => {
   const [isReady, setIsReady] = useState(false);
-  
+
   // Simple transition after component mount
   setTimeout(() => {
     setIsReady(true);
@@ -34,11 +35,11 @@ const HeroChatSection = ({ closeChat }: HeroChatSectionProps) => {
         }}
       >
         {isReady && <ChatInterface closeChat={closeChat} />}
-        
+
         {/* Gradient border styles - matching the "Chat with my AI" button */}
         <style jsx>{`
           .chat-container::before {
-            content: "";
+            content: '';
             position: absolute;
             inset: 0;
             border-radius: 0.5rem;
@@ -46,8 +47,8 @@ const HeroChatSection = ({ closeChat }: HeroChatSectionProps) => {
             background: linear-gradient(45deg, var(--accent), var(--tertiary));
             background-size: 200% 200%;
             animation: gradientShift 4s ease infinite;
-            -webkit-mask: 
-              linear-gradient(#fff 0 0) content-box, 
+            -webkit-mask:
+              linear-gradient(#fff 0 0) content-box,
               linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
@@ -60,4 +61,4 @@ const HeroChatSection = ({ closeChat }: HeroChatSectionProps) => {
   );
 };
 
-export default HeroChatSection; 
+export default HeroChatSection;

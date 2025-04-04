@@ -20,13 +20,13 @@ describe('Home Page', () => {
   it('should open mobile menu on click', () => {
     // Adjust viewport to mobile size
     cy.viewport('iphone-x');
-    
+
     // The mobile menu should be initially hidden
     cy.get('[class*="opacity-0"]').should('exist');
-    
+
     // Click the menu button
     cy.get('button[aria-label="Open menu"]').click();
-    
+
     // The mobile menu should now be visible
     cy.get('[class*="opacity-100"]').should('be.visible');
   });
@@ -34,14 +34,14 @@ describe('Home Page', () => {
   it('should scroll to sections when navigation links are clicked', () => {
     // Click the About link
     cy.contains('a', 'About').click();
-    
+
     // Check if the About section is in view (using ID)
     cy.get('#about').should('be.visible');
-    
+
     // Click the Work link
     cy.contains('a', 'Work').click();
-    
+
     // Check if the Work section is in view
     cy.get('#work').should('be.visible');
   });
-}); 
+});

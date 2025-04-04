@@ -1,8 +1,9 @@
-"use client";
+'use client';
 
-import React, { useRef, useEffect } from 'react';
-import { Message } from '../../../types/chat';
 import { motion, AnimatePresence } from 'framer-motion';
+import React, { useRef, useEffect } from 'react';
+
+import { Message } from '../../../types/chat';
 
 interface ChatMessageListProps {
   messages: Message[];
@@ -19,7 +20,7 @@ const ChatMessageList = ({ messages, isTyping }: ChatMessageListProps) => {
     if (messages.length > prevMessagesLengthRef.current) {
       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
-    
+
     // Update the previous messages length reference
     prevMessagesLengthRef.current = messages.length;
   }, [messages]);
@@ -27,7 +28,7 @@ const ChatMessageList = ({ messages, isTyping }: ChatMessageListProps) => {
   return (
     <div className="overflow-y-auto h-full p-4">
       <AnimatePresence>
-        {messages.map((message) => (
+        {messages.map(message => (
           <motion.div
             key={message.id}
             initial={{ opacity: 0, y: 10 }}
@@ -45,7 +46,7 @@ const ChatMessageList = ({ messages, isTyping }: ChatMessageListProps) => {
             </div>
           </motion.div>
         ))}
-        
+
         {isTyping && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -67,4 +68,4 @@ const ChatMessageList = ({ messages, isTyping }: ChatMessageListProps) => {
   );
 };
 
-export default ChatMessageList; 
+export default ChatMessageList;

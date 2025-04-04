@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+
 import LessonLoomContent from '@/components/case-studies/LessonLoom';
 import ProjectContent from '@/components/case-studies/ProjectContent';
 import { Project } from '@/data/projects';
@@ -14,14 +15,14 @@ export function LessonLoomClient() {
 // Client component for generic projects
 export function ProjectClient({ projectData }: { projectData: string }) {
   const [project, setProject] = useState<Project | null>(null);
-  
+
   useEffect(() => {
     try {
       if (projectData) {
         setProject(JSON.parse(projectData));
       }
     } catch (error) {
-      console.error("Failed to parse project data:", error);
+      console.error('Failed to parse project data:', error);
     }
   }, [projectData]);
 
@@ -30,4 +31,4 @@ export function ProjectClient({ projectData }: { projectData: string }) {
   }
 
   return <ProjectContent project={project} />;
-} 
+}

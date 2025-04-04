@@ -19,13 +19,9 @@ export const ChatToggleProvider = ({ children }: { children: React.ReactNode }) 
     setIsChatOpen(prev => !prev);
   };
 
-  return (
-    <ChatToggleContext.Provider value={{ isChatOpen, toggleChat }}>
-      {children}
-    </ChatToggleContext.Provider>
-  );
+  return <ChatToggleContext.Provider value={{ isChatOpen, toggleChat }}>{children}</ChatToggleContext.Provider>;
 };
 
 export const useChatToggle = () => {
   return useContext(ChatToggleContext);
-}; 
+};

@@ -21,7 +21,7 @@ const nextConfig = {
     return config;
   },
   // Disable source maps in production to reduce build size
-  productionBrowserSourceMaps: false
+  productionBrowserSourceMaps: false,
 };
 
-module.exports = nextConfig; 
+module.exports = nextConfig;

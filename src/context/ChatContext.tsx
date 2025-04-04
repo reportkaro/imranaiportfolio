@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
@@ -16,7 +16,7 @@ interface ChatContextType {
   messages: ChatMessage[];
   addMessage: (text: string, sender: 'user' | 'system') => void;
   clearMessages: () => void;
-  
+
   // Chat interface state
   isOpen: boolean;
   openChat: () => void;
@@ -29,7 +29,7 @@ const ChatContext = createContext<ChatContextType>({
   messages: [],
   addMessage: () => {},
   clearMessages: () => {},
-  
+
   // Chat interface state defaults
   isOpen: false,
   openChat: () => {},
@@ -45,7 +45,7 @@ const generateId = (): string => {
 export const ChatProvider = ({ children }: { children: ReactNode }) => {
   // Message state
   const [messages, setMessages] = useState<ChatMessage[]>([]);
-  
+
   // Chat interface state
   const [isOpen, setIsOpen] = useState(false);
 
@@ -57,31 +57,31 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
       timestamp: new Date(),
       sender,
     };
-    setMessages((prev) => [...prev, newMessage]);
+    setMessages(prev => [...prev, newMessage]);
   };
 
   const clearMessages = () => {
     setMessages([]);
   };
-  
+
   // Chat interface handlers
   const openChat = () => {
     setIsOpen(true);
   };
-  
+
   const closeChat = () => {
     setIsOpen(false);
   };
 
   return (
-    <ChatContext.Provider 
-      value={{ 
-        messages, 
-        addMessage, 
+    <ChatContext.Provider
+      value={{
+        messages,
+        addMessage,
         clearMessages,
         isOpen,
         openChat,
-        closeChat
+        closeChat,
       }}
     >
       {children}
@@ -92,4 +92,4 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
 // Hook for easy context access
 export const useChat = () => useContext(ChatContext);
 
-export default ChatContext; 
+export default ChatContext;

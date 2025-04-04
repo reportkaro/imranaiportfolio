@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 
@@ -26,4 +26,4 @@ const ChatSuggestions = ({ suggestions, onSelect }: ChatSuggestionsProps) => {
   );
 };
 
-export default ChatSuggestions; 
+export default ChatSuggestions;

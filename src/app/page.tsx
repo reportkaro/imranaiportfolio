@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
+
 import Hero from '@/components/sections/Hero';
-import About from '@/components/sections/About';
-import Projects from '@/components/sections/Projects';
 import Process from '@/components/sections/Process';
+import Projects from '@/components/sections/Projects';
 
 export default function Home() {
   return (
@@ -11,18 +11,14 @@ export default function Home() {
       <Suspense fallback={<div className="h-screen" />}>
         <Hero />
       </Suspense>
-      
+
       {/* Main Content Sections */}
       <Suspense fallback={<div className="h-96" />}>
         <Projects />
       </Suspense>
-      
+
       <Suspense fallback={<div className="h-96" />}>
         <Process />
-      </Suspense>
-      
-      <Suspense fallback={<div className="h-96" />}>
-        <About />
       </Suspense>
     </main>
   );

@@ -58,4 +58,4 @@ export interface ChatToggleState {
   isChatOpen: boolean;
   /** Function to toggle the chat open/closed state */
   toggleChat: (e?: React.MouseEvent) => void;
-} 
+}

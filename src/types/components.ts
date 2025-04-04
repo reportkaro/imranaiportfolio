@@ -3,6 +3,7 @@
  */
 
 import { ReactNode } from 'react';
+
 import { AnimationProps } from './animations';
 import { Message, SendMessageFunction } from './chat';
 
@@ -146,4 +147,4 @@ export interface ChatProviderProps {
   children: ReactNode;
   /** Initial state */
   initialIsOpen?: boolean;
-} 
+}

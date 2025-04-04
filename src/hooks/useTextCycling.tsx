@@ -43,20 +43,20 @@ export type TextCyclingStatus = 'typing' | 'deleting' | 'pausing';
 
 /**
  * A hook that cycles through a list of texts with typing-like animation
- * 
+ *
  * @param options Configuration options for the text cycling
  * @returns Object containing the current state and controls
  */
-export const useTextCycling = ({ 
-  texts, 
-  typingSpeed = 1500, 
+export const useTextCycling = ({
+  texts,
+  typingSpeed = 1500,
   pauseDuration = 3000,
   autoStart = true,
-  charSpeed = 40
+  charSpeed = 40,
 }: TextCyclingOptions): TextCyclingResult => {
   // Ensure we have at least one text to display
-  const validTexts = texts && texts.length > 0 ? texts : ["Text"];
-  
+  const validTexts = texts && texts.length > 0 ? texts : ['Text'];
+
   const [index, setIndex] = useState<number>(0);
   const [currentText, setCurrentText] = useState<string>('');
   const [fullText, setFullText] = useState<string>(validTexts[0]);
@@ -100,15 +100,13 @@ export const useTextCycling = ({
           setStatus('pausing');
         }, 50); // Short delay to ensure typing is complete
       }
-    } 
-    else if (status === 'pausing') {
+    } else if (status === 'pausing') {
       // Keep text visible during pause
       timer = setTimeout(() => {
         setStatus('deleting');
         setCharIndex(fullText.length);
       }, pauseDuration);
-    }
-    else if (status === 'deleting') {
+    } else if (status === 'deleting') {
       // Character-by-character deletion
       if (charIndex > 0) {
         timer = setTimeout(() => {
@@ -124,12 +122,12 @@ export const useTextCycling = ({
     return () => clearTimeout(timer);
   }, [status, pauseDuration, charIndex, fullText, charSpeed, next]);
 
-  return { 
-    currentText, 
-    textOpacity, 
+  return {
+    currentText,
+    textOpacity,
     typing: status === 'typing',
     deleting: status === 'deleting',
     status,
-    next
+    next,
   };
-}; 
+};
